@@ -1,0 +1,136 @@
+.eds-input {
+
+  @apply
+
+    flex
+    items-stretch
+    overflow-hidden
+
+    h-32
+    p-0
+    m-0
+
+    bg-white
+
+    border
+    border-box
+    border-gray-600
+    border-solid
+    rounded
+
+    transition-150
+    transition-border,shadow
+    transition-ease
+
+  ;
+
+  &_\#input {
+    @apply
+      m-0
+      px-8
+      py-4
+      w-full
+      h-full
+      border-box
+
+      flex
+      flex-row
+      items-center
+      text-left
+
+      bg-transparent
+      text-black
+
+      border-0
+
+      antialiased
+      font-400
+      font-sans
+      leading-normal
+      text-16
+
+      appearance-none
+    ;
+
+    &\.dropdown {
+      @apply
+        bg-no-repeat
+        bg-right
+        pr-24
+      ;
+
+      background-image: svg-load("eds-input.assets/marker.svg", fill: ref(^^&:focus-within, border-color));
+
+      &:disabled {
+        background-image: svg-load("eds-input.assets/marker.svg", fill: ref(.eds-input\.disabled .eds-input_\#input, color));
+      }
+    }
+
+    &\.multiselect {
+      @apply px-0;
+    }
+
+    &::placeholder {
+      @apply
+        opacity-100
+        text-gray-700 /* TODO: There should be a .placeholder-gray-400 utility, but it won't work for some reason. */
+      ;
+    }
+
+    &\.placeholder {
+      @apply text-gray-700;
+    }
+
+    &:focus {
+      @apply outline-none;
+    }
+
+    &::-ms-expand {
+      @apply hidden;
+    }
+
+    &::-webkit-search-decoration {
+      -webkit-appearance: none;
+    }
+  }
+
+  &\.error {
+    @apply
+      bg-red-100
+      border-red-500
+      shadow-outline-red-500
+    ;
+  }
+
+  &\.warning {
+    @apply
+      bg-yellow-100
+      border-orange-500
+      shadow-outline-orange-500
+    ;
+  }
+
+  &\.disabled {
+    @apply border-dotted;
+
+    ^&_\#input {
+      @apply
+        text-gray-300
+        text-fill-current
+        cursor-not-allowed
+      ;
+    }
+  }
+
+  &:focus-within {
+    @apply
+      border-blue-600
+      outline-none
+      shadow-outline-blue-600
+    ;
+  }
+
+  &\.no-border {
+    @apply border-transparent;
+  }
+}

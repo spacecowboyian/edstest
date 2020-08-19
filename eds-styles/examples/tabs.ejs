@@ -1,0 +1,72 @@
+<%
+const title = "Tabs";
+
+function generateTab({ icon, label, closable, selected }) {
+%><div class="eds-tab<%- selected ? " eds-tab.selected" : "" %>" role="presentation">
+      <a href="#" class="eds-tab_#content eds-tab_.eds-link eds-link<%- selected ? " eds-link.selected" : "" %>" aria-role="tab" aria-selected="<%- selected ? "true" : "false" %>">
+        <% if (icon) { %><svg viewBox="0 0 24 24" class="eds-tab_.icon">
+          <%- icon %>
+        </svg>
+        <% } %><span class="eds-tab_#label"><%= label %></span>
+      </a><% if (closable) { %>
+      <button class="eds-tab_#close eds-tab_.eds-link eds-link">
+        <svg class="eds-tab_.icon" viewBox="0 0 24 24">
+          <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+        </svg>
+      </button><% } %>
+    </div><% }
+
+function generateTabsetTab({ icon, label, closable, selected }) {
+%><li class="eds-tabset_.eds-tab eds-tab<%- selected ? " eds-tab.selected" : "" %>" role="presentation">
+        <a href="#" class="eds-tab_#content eds-tab_.eds-link eds-link<%- selected ? " eds-link.selected" : "" %>" aria-role="tab" aria-selected="<%- selected ? "true" : "false" %>">
+          <% if (icon) { %><svg viewBox="0 0 24 24" class="eds-tab_.icon">
+            <%- icon %>
+          </svg>
+          <% } %><span class="eds-tab_#label"><%= label %></span>
+        </a><% if (closable) { %>
+        <button class="eds-tab_#close eds-tab_.eds-link eds-link">
+          <svg class="eds-tab_.icon" viewBox="0 0 24 24">
+            <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+          </svg>
+        </button><% } %>
+      </li><% } %>
+
+<title><%= title %></title>
+
+<section class="example-page">
+
+  <%- include("_header.ejs", {
+    classes: ["example-page_#header"],
+    title,
+    stability: 2,
+    summary: "Tabs organize content across different screens, interactions, or data sets within the workflow or UI."
+  }) _%>
+
+  <div class="example-page_#content">
+
+    <%- generateTab({ label: "Basic Tab" }) %>
+    
+    <p></p>
+
+    <%- generateTab({ icon: `<path d="M10 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2h-8l-2-2z"/>`, label: "Icon Tab" }) %>
+    
+    <p></p>
+
+    <%- generateTab({ label: "Closable Tab", closable: true }) %>
+    
+    <p></p>
+
+    <%- generateTab({ label: "Selected Tab", selected: true }) %>
+
+    <p></p>
+
+    <ul class="eds-tabset" role="tablist">
+      <%- generateTabsetTab({ icon: `<path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z"/>`, label: "Dashboard", selected: true, tabset: true }) %>
+      <%- generateTabsetTab({ icon: `<path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/>`, label: "Document 1", closable: true, tabset: true }) %>
+      <%- generateTabsetTab({ icon: `<path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/>`,  label: "Document 2", closable: true, tabset: true }) %>
+      <%- generateTabsetTab({ icon: `<path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/>`, label: "Document 3", closable: true, tabset: true }) %>
+    </ul>
+
+  </div>
+
+</section>

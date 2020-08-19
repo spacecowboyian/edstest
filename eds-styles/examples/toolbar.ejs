@@ -1,0 +1,72 @@
+<% const title = "Toolbar"; %>
+
+<title><%= title %></title>
+
+<section class="example-page">
+
+  <%- include("_header.ejs", {
+    classes: ["example-page_#header"],
+    title,
+    stability: 2,
+    summary: "Toolbars are horizontally-arranged groups of controls and content. Integrates with Card and Table components."
+  }) _%>
+
+  <div class="example-page_#content">
+
+    <div class="border border-solid border-gray-300 w-512">
+
+      <div class="eds-card_.eds-toolbar eds-toolbar">
+        <div class="eds-toolbar_.section eds-toolbar_.section.no-padding">
+          <div class="eds-input eds-input.no-border">
+            <input type="text" placeholder="Type here to filter..." class="eds-input_#input">
+          </div>
+        </div>
+        <div class="eds-toolbar_.section">
+          <button class="eds-button eds-button.tertiary eds-button.compact" aria-label="New Note">
+            <svg class="eds-button_#icon" viewBox="0 0 24 24">
+              <path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 14h-3v3h-2v-3H8v-2h3v-3h2v3h3v2zm-3-7V3.5L18.5 9H13z"></path>
+            </svg>
+          </button>
+        </div>
+        <div class="eds-toolbar_.section">
+          <button class="eds-button eds-button.tertiary">
+            <svg class="eds-button_#icon" viewBox="0 0 24 24">
+              <path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"></path>
+            </svg>
+            <span class="eds-button_#label">Delete</span>
+          </button>
+          <button class="eds-button eds-button.tertiary">
+            <svg class="eds-button_#icon" viewBox="0 0 24 24">
+              <path d="M12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm5 13.59L15.59 17 12 13.41 8.41 17 7 15.59 10.59 12 7 8.41 8.41 7 12 10.59 15.59 7 17 8.41 13.41 12 17 15.59z"></path>
+            </svg>
+            <span class="eds-button_#label">Cancel</span>
+          </button>
+        </div>
+      </div>
+
+    </div>
+    <div class="mt-16 border border-solid border-gray-300 w-512">
+
+      <div class="eds-toolbar eds-toolbar.inverse">
+        <div class="eds-toolbar_.section"><span>5</span>&nbsp;rows selected</div>
+        <div class="eds-toolbar_.section">
+          <button class="eds-button eds-button.tertiary-inverse">
+            <svg class="eds-button_#icon" viewBox="0 0 24 24">
+              <path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"></path>
+            </svg>
+            <span class="eds-button_#label">Delete</span>
+          </button>
+          <button class="eds-button eds-button.tertiary-inverse">
+            <svg class="eds-button_#icon" viewBox="0 0 24 24">
+              <path d="M12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm5 13.59L15.59 17 12 13.41 8.41 17 7 15.59 10.59 12 7 8.41 8.41 7 12 10.59 15.59 7 17 8.41 13.41 12 17 15.59z"></path>
+            </svg>
+            <span class="eds-button_#label">Cancel</span>
+          </button>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>

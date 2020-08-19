@@ -1,0 +1,47 @@
+.eds-field {
+  @apply inline-block;
+
+  &_\#label, &_\#assistive-text {
+    @apply
+      antialiased
+      font-sans
+      leading-normal
+      text-14
+    ;
+  }
+
+  &_\#label {
+    @apply
+      block
+      font-500
+      pb-8
+      text-black
+    ;
+
+    &\.disabled {
+      @apply text-gray-600;
+    }
+  }
+
+  &_\#control {
+    @apply w-full;
+  }
+
+  &_\#assistive-text {
+    @apply
+      font-400
+      pt-8
+      text-gray-700
+      table-cell
+      align-bottom
+    ;
+
+    &\.warning {
+      @apply text-orange-700;
+    }
+
+    &\.error {
+      @apply text-red-700;
+    }
+  }
+}

@@ -1,0 +1,94 @@
+<% const title = "Card"; %>
+
+<title><%= title %></title>
+
+<section class="example-page">
+
+  <%- include("_header.ejs", {
+    classes: ["example-page_#header"],
+    title,
+    stability: 2,
+    summary: "Cards are containers that house a preview of the content. They're an entry point to more detailed content a user can access when they interact with the card. Cards can include all types of content and interactive functionality."
+  }) _%>
+
+  <div class="example-page_#content">
+
+    <div class="inline-flex flex-row flex-wrap items-top w-512">
+      <div class="w-1/2">
+
+        <section class="eds-card mr-8">
+          <header class="eds-card_#header">
+            <h1 class="eds-card_.title">Card with sample content</h1>
+          </header>
+          <p class="eds-card_#content">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+            dolore magna aliqua.
+          </p>
+          <div class="eds-card_#footer">
+            <button class="eds-button eds-button.basic">Confirm</button>
+          </div>
+        </section>
+
+      </div>
+
+      <div class="w-1/2">
+
+        <section class="eds-card eds-card.gray ml-8">
+          <div class="eds-card_#content">
+            <h1 class="eds-card_.title">Card with sample content</h1>
+            <p style="margin-bottom: 0">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+              dolore magna aliqua.
+            </p>
+          </div>
+        </section>
+
+      </div>
+
+      <div class="w-full">
+
+        <section class="eds-card mt-16">
+          <header class="eds-card_#header eds-card_#header.no-padding">
+            <div class="eds-card_.eds-toolbar eds-toolbar">
+              <div class="eds-toolbar_.section">
+                <h1 class="eds-card_.title">Card with sample content</h1>
+              </div>
+              <div class="eds-toolbar_.section">
+                <button class="eds-button eds-button.tertiary eds-button.compact" aria-label="New Note">
+                  <svg class="eds-button_#icon" viewBox="0 0 24 24">
+                    <path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 14h-3v3h-2v-3H8v-2h3v-3h2v3h3v2zm-3-7V3.5L18.5 9H13z"/>
+                  </svg>
+                </button>
+              </div>
+              <div class="eds-toolbar_.section">
+                <button class="eds-button eds-button.tertiary">
+                  <svg class="eds-button_#icon" viewBox="0 0 24 24">
+                    <path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"/>
+                  </svg>
+                  <span class="eds-button_#label">Delete</span>
+                </button>
+                <button class="eds-button eds-button.tertiary">
+                  <svg class="eds-button_#icon" viewBox="0 0 24 24">
+                    <path d="M12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm5 13.59L15.59 17 12 13.41 8.41 17 7 15.59 10.59 12 7 8.41 8.41 7 12 10.59 15.59 7 17 8.41 13.41 12 17 15.59z"/>
+                  </svg>
+                  <span class="eds-button_#label">Cancel</span>
+                </button>
+              </div>
+            </div>
+          </header>
+          <p class="eds-card_#content">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+            dolore magna aliqua.
+          </p>
+          <div class="eds-card_#footer">
+            <button class="eds-button eds-button.basic">Confirm</button>
+          </div>
+        </section>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>

@@ -1,0 +1,49 @@
+.eds-tag {
+  @apply
+    inline-block
+
+    px-8
+    py-4
+    rounded-full
+
+    bg-gray-200
+    text-black
+
+    antialiased
+    font-400
+    font-sans
+    text-14
+    leading-none
+  ;
+
+  &\.info {
+    @apply
+      bg-white
+      border
+      border-solid
+      border-gray-400
+      border-box
+    ;
+  }
+
+  &\.error {
+    @apply
+      bg-red-200
+      text-red-700
+    ;
+  }
+
+  &\.warning {
+    @apply
+      bg-yellow-200
+      text-orange-800
+    ;
+  }
+
+  &\.success {
+    @apply
+      bg-green-200
+      text-green-700
+    ;
+  }
+}

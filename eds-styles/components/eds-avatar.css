@@ -1,0 +1,87 @@
+.eds-avatar {
+  @apply
+    content-box
+    inline-flex
+    text-center
+    justify-center
+    rounded-full
+    overflow-hidden
+
+    w-32
+    h-32
+
+    border
+    border-solid
+    border-gray-400
+
+    text-gray-400
+    bg-white
+
+    antialiased
+    font-500
+    font-sans
+    text-14
+  ;
+
+  line-height: 32px;
+
+  &\.gray {
+    @apply bg-white;
+  }
+
+  &\.inverse {
+    @apply
+      bg-transparent
+      border-white
+      text-white
+    ;
+  }
+
+  &\.blue {
+    @apply
+      border-blue-600
+      text-blue-600
+    ;
+  }
+
+  &\.sm {
+    @apply
+      w-24
+      h-24
+      text-12
+    ;
+
+    line-height: 24px;
+  }
+
+  &\.lg {
+    @apply
+      w-48
+      h-48
+      text-18
+    ;
+    line-height: 48px;
+  }
+
+  &::before {
+    content: attr(data-initials);
+  }
+
+  &:not([data-initials]) {
+    @apply
+      bg-no-repeat
+      bg-center
+    ;
+
+    background-image: svg-load("./eds-avatar.assets/icon.svg", fill: ref(^&, border-color));
+    background-size: 80%;
+  }
+
+  &\.inverse:not([data-initials]) {
+    background-image: svg-load("./eds-avatar.assets/icon.svg", fill: ref(^^&\.inverse, border-color));
+  }
+
+  &\.blue:not([data-initials]) {
+    background-image: svg-load("./eds-avatar.assets/icon.svg", fill: ref(^^&\.blue, border-color));
+  }
+}

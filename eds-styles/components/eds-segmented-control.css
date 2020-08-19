@@ -1,0 +1,109 @@
+.eds-segmented-control {
+  padding: 3px;
+  @apply
+    inline-flex
+    items-center
+    bg-white
+    border
+    border-solid
+    border-gray-300
+    rounded-full
+  ;
+
+  &\.gray {
+    @apply bg-gray-100;
+  }
+
+  &_\.option {
+    position: relative;
+    @apply
+      border
+      border-solid
+      border-transparent
+      rounded-full
+      h-24
+      py-0
+      px-12
+      m-0
+      border-box
+      inline-flex
+      items-center
+      bg-transparent
+      text-blue-600
+      font-sans
+      font-500
+      antialiased
+      text-14
+      cursor-pointer
+      outline-none
+    ;
+
+    /* https://scottaohara.github.io/a11y_styled_form_controls/src/radio-button/ */
+    &_\#input {
+      position: absolute;
+      appearance: none;
+      background: none;
+      opacity: 0.00001;
+      z-index: 2;
+    }
+
+    & + & {
+      @apply ml-8;
+    }
+
+    &_\#icon {
+      $size: 18px;
+      width: $size;
+      height: $size;
+      font-size: $size;
+      fill: currentColor;
+      margin: 0 -6px;
+    }
+
+    &_\#icon + &_\#label {
+      margin-left: 12px;
+    }
+
+    &:focus {
+      @apply
+        shadow-outline-blue-600
+        border-blue-600
+      ;
+    }
+
+    &\.selected {
+      @apply
+        bg-blue-600
+        text-white
+      ;
+    }
+  }
+
+  &_\.message {
+    @apply
+      font-sans
+      font-400
+      antialiased
+      text-14
+      text-black
+      mr-16
+      ml-8
+      inline-block
+    ;
+  }
+
+  &_\.option + &_\.message {
+    @apply
+      ml-16
+      mr-8
+    ;
+  }
+
+  &_\.link {
+    @apply
+      no-underline
+      text-blue-600
+      font-700
+    ;
+  }
+}

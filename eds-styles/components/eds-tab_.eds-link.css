@@ -1,0 +1,8 @@
+.eds-tab_\.eds-link {
+  @apply
+    no-underline
+    flex
+    flex-row
+    items-center
+  ;
+}

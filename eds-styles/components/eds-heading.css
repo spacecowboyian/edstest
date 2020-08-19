@@ -1,0 +1,71 @@
+.eds-heading {
+  @apply
+    antialiased
+    font-400
+    font-sans
+    leading-normal
+    text-16
+    text-black
+  ;
+
+  &\.xl {
+    @apply text-30;
+
+    &-caps {
+      font-size: calc(ref(^&, font-size)-2px);
+    }
+  }
+
+  &\.lg {
+    @apply text-24;
+
+    &-caps {
+      font-size: calc(ref(^&, font-size)-2px);
+    }
+  }
+
+  &\.md {
+    @apply text-16;
+
+    &-caps {
+      font-size: calc(ref(^&, font-size)-2px);
+    }
+  }
+
+  &\.mdplus {
+    @apply text-18;
+
+    &-caps {
+      font-size: calc(ref(^&, font-size)-2px);
+    }
+  }
+
+  &\.sm {
+    @apply text-14;
+
+    &-caps {
+      font-size: calc(ref(^&, font-size)-2px);
+    }
+  }
+
+  &\.xs {
+    @apply text-12;
+  }
+
+  &\.xl, &\.lg {
+    @apply font-300;
+  }
+
+  &\.mdplus, &\.md, &\.sm {
+    @apply font-700;
+  }
+
+  &\.xl, &\.lg, &\.mdplus, &\.md, &\.sm {
+    &-caps {
+      @apply
+        uppercase
+        text-purple-700
+      ;
+    }
+  }
+}

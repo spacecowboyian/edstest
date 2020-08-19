@@ -1,0 +1,12 @@
+<header class="example-header<%= (locals.classes || []).map(c => ` ${c}`).join("") %>">
+    <h1 class="example-header_#title"><%= locals.title %></h1>
+    <div class="example-header_#status">
+      <div class="eds-tag eds-tag.<%= ["error", "warning", "success"][locals.stability] %>">
+        <strong>Stability:</strong>
+        <%= ["Low", "Medium", "High"][locals.stability] %>
+      </div>
+    </div>
+    <div class="example-header_#summary">
+      <%= locals.summary %>
+    </div>
+  </header>

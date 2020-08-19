@@ -1,0 +1,10 @@
+@import "@experian/eds-styles/dist/components/eds-segmented-control";
+
+.eds-segmented-control_\.message {
+  margin-left: 16px;
+  margin-right: 8px;
+
+  ::slotted(a) {
+    @extend .eds-segmented-control_\.link;
+  }
+}

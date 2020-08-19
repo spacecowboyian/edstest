@@ -1,0 +1,43 @@
+.eds-breadcrumbs {
+  @apply
+    flex
+    items-center
+    border-t-0
+    border-r-0
+    border-b
+    border-l-0
+    border-solid
+    border-gray-300
+    h-48
+    font-400
+    font-sans
+    text-14
+    text-gray-600
+    antialiased
+    list-none
+    pt-0
+    pr-0
+    pb-0
+    pl-20
+    m-0
+  ;
+
+  &_\.part {
+    @apply
+      ml-12
+      no-underline
+    ;
+  }
+
+  &_\.icon {
+    /* Material Design claims that its button is compatible with MD Icons, Font Awesome, SVG, and ???.
+     * Therefore, we apply the same styles here as its mdc-button__icon class.
+     * See also: https://material.io/develop/web/components/buttons/
+     */
+    $size: 18px;
+    width: $size;
+    height: $size;
+    font-size: $size;
+    fill: currentColor;
+  }
+}

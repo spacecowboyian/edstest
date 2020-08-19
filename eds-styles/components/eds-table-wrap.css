@@ -1,0 +1,34 @@
+.eds-table-wrap {
+  @apply
+    border
+    border-solid
+    border-gray-300
+    rounded-lg
+    overflow-hidden
+    flex
+    flex-col
+  ;
+
+  &_\#tools {
+    @apply
+      border-b
+      border-t-0
+    ;
+  }
+
+  &_\#pagination {
+    @apply
+      border-t
+      border-b-0
+    ;
+  }
+
+  &_\#tools, &_\#pagination {
+    @apply
+      border-r-0
+      border-l-0
+      border-solid
+      border-gray-300
+    ;
+  }
+}

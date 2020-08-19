@@ -1,0 +1,109 @@
+.eds-radio {
+  @apply
+    inline-flex
+    flex-row
+    items-center
+  ;
+
+  &_\#input {
+    @apply
+      outline-none
+      bg-white
+      bg-no-repeat
+      bg-center
+      text-blue-600
+      rounded-full
+      transition-150
+      transition-border,shadow
+      transition-ease
+    ;
+
+    width: 18px;
+    height: 18px;
+
+    background-size: 10px 10px;
+
+    &:checked {
+      background-image: svg-load("./eds-radio.assets/circle.svg", fill: ref(^&, color));
+
+      &:disabled {
+        background-image: svg-load("./eds-radio.assets/circle.svg", fill: ref(.eds-radio_\#input:disabled, color));
+      }
+    }
+
+    &:disabled {
+      @apply
+        text-gray-300
+        cursor-not-allowed
+      ;
+    }
+
+    &:focus {
+      @apply shadow-outline-blue-600;
+    }
+  }
+
+  &_\#label {
+    @apply
+      antialiased
+      font-400
+      font-sans
+      text-16
+      text-black
+      ml-8
+    ;
+
+    ^&_\#input:disabled ~ & {
+      @apply text-gray-600;
+    }
+  }
+}
+
+@supports not (-ms-high-contrast: none) {
+  .eds-radio_\#input {
+    @apply
+      appearance-none
+      border
+      border-solid
+      border-gray-600
+      rounded-full
+    ;
+
+    &:checked, &:focus {
+      @apply border-blue-600;
+    }
+
+    &:disabled {
+      @apply border-gray-300;
+    }
+  }
+}
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .eds-radio_\#input {
+    &::-ms-check {
+      @apply
+        border
+        border-solid
+        border-gray-600
+
+        rounded-full
+
+        border-box
+        w-full
+        h-full
+
+        bg-transparent
+        text-transparent
+
+        transition-150
+        transition-border
+        transition-ease
+      ;
+    }
+
+    &:checked::-ms-check, &:focus::-ms-check {
+      @apply border-blue-600;
+    }
+  }
+}

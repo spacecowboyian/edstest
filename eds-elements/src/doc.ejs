@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html class="h-full">
+  <head>
+    <link rel="stylesheet" href="doc-lib/eds-styles/site-lib/typeface-roboto/index.css" />
+    <link rel="stylesheet" href="doc-lib/eds-styles/site-lib/material-design-icons/iconfont/material-icons.css" />
+    <link rel="stylesheet" href="doc-lib/prismjs/themes/prism.css" />
+    <link rel="stylesheet" href="doc-lib/eds-styles/dist/eds-all.css" />
+    <link rel="stylesheet" href="doc-lib/eds-styles/index.css" />
+    <title>Experian Design System: <%= doc.component %></title>
+  </head>
+  <body class="h-full absolute top-0 right-0 bottom-0 left-0 flex flex-col m-0">
+    <header class="flex flex-row items-center font-sans bg-raspberry-600 text-white border-t-0 border-r-0 border-b border-l-0 border-solid border-gray-400">
+      <div
+        class="flex flex-row py-16 items-center bg-white text-black border-t-0 border-r border-b-0 border-l border-solid border-gray-400 cursor-pointer"
+        onclick="location.href='index.html'"
+        id="logoCell">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20.8 26.5" width="25" height="32" class="ml-16">
+          <style>
+            .st0{fill:#406EB3;}.st1{fill:#632678;}.st2{fill:#982881;}.st3{fill:#BA2F7D;}.st4{fill:#26478D;}
+            .a {
+              fill: #ba2f7d;
+              stroke-width: 0.3;
+            }
+          </style>
+          <g transform="translate(122.91408 -181.93624)translate(0.50000173 -0.49999809)">
+            <path d="m-110.5 188.9h-2.9c-0.9 0-1.6-0.7-1.6-1.6v-2.9c0-0.8 0.7-1.6 1.6-1.6h2.9c0.8 0 1.6 0.7 1.6 1.6v2.9c0 0.9-0.7 1.6-1.6 1.6" class="st0" style="fill:#406eb3;stroke-width:0.3"/>
+            <path d="m-117.9 195.4h-3.2c-1 0-1.7-0.8-1.7-1.7v-3.3c0-1 0.8-1.7 1.7-1.7h3.3c1 0 1.7 0.8 1.7 1.7v3.3c0 1-0.8 1.7-1.8 1.7" class="st1" style="fill:#632678;stroke-width:0.3"/>
+            <path d="m-118.2 202.2h-2c-0.6 0-1.1-0.5-1.1-1.1v-2c0-0.6 0.5-1.1 1.1-1.1h2c0.6 0 1.1 0.5 1.1 1.1v2c0 0.6-0.5 1.1-1.1 1.1" class="st2" style="fill:#982881;stroke-width:0.3"/>
+            <path d="m-112.9 208.4h-2.4c-0.7 0-1.3-0.6-1.3-1.3v-2.4c0-0.7 0.6-1.3 1.3-1.3h2.4c0.7 0 1.3 0.6 1.3 1.3v2.4c0 0.7-0.6 1.3-1.3 1.3" class="st3" class="a"/>
+            <path d="m-104.3 190.1h-1.6c-0.5 0-0.9-0.4-0.9-0.9v-1.6c0-0.5 0.4-0.9 0.9-0.9h1.6c0.5 0 0.9 0.4 0.9 0.9v1.6c0 0.5-0.4 0.9-0.9 0.9" class="st3 a"/>
+            <path d="m-104.8 196.7c0-2.4-2.1-4.4-4.7-4.4-2.6 0-4.7 2.1-4.7 4.7 0 2.6 2.1 4.7 4.7 4.7 1.2 0 2.4-0.5 3.3-1.3 0.2-0.1 0.3-0.4 0.3-0.6 0-0.4-0.4-0.8-0.8-0.8-0.2 0-0.4 0.1-0.6 0.3-0.5 0.6-1.3 0.8-2.1 0.8-1.6 0-2.8-1.1-3.1-2.5h7c0 0 0 0 0 0h0c0 0 0 0 0 0 0 0 0.1 0 0.1 0 0.3-0.1 0.6-0.4 0.6-0.8zm-4.7-2.9c1.4 0 2.6 0.9 3 2.2h-6c0.4-1.3 1.6-2.2 3-2.2z" class="st4" style="fill:#26478d;stroke-width:0.3"/>
+          </g>
+        </svg>
+        <h1 class="ml-8 mr-16 text-16 font-400 antialiased">Experian Design System</h1>
+      </div>
+      <h2 class="flex-1 text-2xl font-300 ml-16 antialiased">Web Components</h2>
+    </header>
+    <div class="flex-1 flex flex-row">
+      <nav class="bg-white text-black font-sans border-gray-400 border-solid border-t-0 border-r border-b-0 border-l border-box overflow-y-auto" id="navCell">
+      <% docs.forEach(function({ url, component }) { %>
+        <a href="<%- url %>" class="eds-menu-item eds-menu-item.basic<%- url === doc.url ? "-selected" : "" %>"><span class="eds-menu-item_#label"><%- component %></span></a>
+      <% }); %>
+      </nav>
+      <main class="bg-gray-100 flex-1 overflow-y-auto">
+        <div class="example-page">
+          <header class="example-header example-page_#header">
+            <h1 class="example-header_#title"><%= doc.component %></h1>
+            <div class="example-header_#status">
+              <a class="eds-link inline-flex no-underline" href="doc-lib/eds-styles/index.html#<%- doc.stylesUrl %>">
+                <i class="material-icons text-18">launch</i>
+                <span class="ml-4">Style layer</span>
+              </a>
+            </div>
+            <div class="example-header_#summary"><%= doc.summary %></div>
+          </header>
+          <div class="example-page_#content antialiased font-400 font-sans text-16 text-black">
+            <% if (doc.example) { %>
+            <h2 class="eds-heading eds-heading.mdplus">Example</h2>
+            <section>
+              <%-doc.example%>
+            </section>
+            <% } %>
+            <%
+              [[null, doc]]
+                .concat(Object.entries(doc.children || []).map(([k, v]) => [`${doc.tag}-${k}`, v]))
+                .forEach(([child, doc], ix) => {
+            %>
+            <h2 class="eds-heading eds-heading.mdplus <%- doc.example || ix ? "mt-48" : "" %> mb-0">
+              <code class="text-magenta-600"><%- child || "" %></code>
+              Properties
+            </h2>
+            <% Object.keys(doc.properties).forEach((key, index, props) => {
+              const property = doc.properties[key]; %>
+              <section class="border-t-0 border-r-0 border-b<%- index === props.length - 1 ? "-0" : "" %> border-l-0 border-solid border-gray-300 py-16">
+                <a name="config-<%- key %>"></a>
+                <div class="inline-block eds-heading eds-heading.md mb-8">
+                  <h3 class="eds-heading eds-heading.md m-0 inline-block">
+                    <a href="#config-<%- key %>" class="eds-link no-underline"><%- key %></a>
+                  </h3>
+                  <span class="font-700">:</span>
+                  <code class="eds-heading eds-heading.md font-400 font-mono text-magenta-600">
+                    <%- property.type %>
+                  </code>
+                </div>
+                <p class="m-0"><%- property.description %></p>
+                <% if (property.example) { %>
+                  <div class="mt-16">
+                    <%- property.example %>
+                    <pre style="margin:0;margin-top:8px;padding:0"><code class="language-markup" style="margin:0;padding:0"><%- Prism.highlight(Prism.plugins.NormalizeWhitespace.removeIndent(property.example).trim(), Prism.languages.markup) %></code></pre>
+                  </div>
+                <% } %>
+              </section>
+            <% }) %>
+            <% if (doc.methods) { %>
+              <h2 class="eds-heading eds-heading.mdplus mt-48 mb-0">
+                <code class="text-magenta-600"><%- child || "" %></code>
+                Methods
+              </h2>
+              <% Object.keys(doc.methods).forEach((key, index, props) => {
+                const method = doc.methods[key]; %>
+                <section class="border-t-0 border-r-0 border-b<%- index === props.length - 1 ? "-0" : "" %> border-l-0 border-solid border-gray-300 py-16">
+                  <a name="config-<%- key %>"></a>
+                  <div class="inline-block eds-heading eds-heading.md mb-8">
+                    <h3 class="eds-heading eds-heading.md m-0 inline-block">
+                      <a href="#config-<%- key %>" class="eds-link no-underline"><%- key %></a>
+                    </h3>
+                    <span class="font-700">:</span>
+                    <code class="eds-heading eds-heading.md font-400 font-mono text-magenta-600">
+                      (<% Object.keys(method.parameters || []).forEach((key, ix) => { %>
+                      <%- (ix ? ", " : "") + method.parameters[key][0] + ": " + method.parameters[key][1] %>
+                      <% }) %>) =&gt; <%- method.type %>
+                    </code>
+                  </div>
+                  <p class="m-0"><%- method.description %></p>
+                  <% if (method.example) { %>
+                    <div class="mt-16">
+                      <%- method.example %>
+                      <pre style="margin:0;margin-top:8px;padding:0"><code class="language-markup" style="margin:0;padding:0"><%- Prism.highlight(Prism.plugins.NormalizeWhitespace.removeIndent(method.example).trim(), Prism.languages.markup) %></code></pre>
+                    </div>
+                  <% } %>
+                </section>
+              <% }) %>
+            <% } %>
+            <% if (doc.events) { %>
+              <h2 class="eds-heading eds-heading.mdplus mt-48 mb-0">
+                <code class="text-magenta-600"><%- child || "" %></code>
+                Events
+              </h2>
+              <% Object.keys(doc.events).forEach((key, index, events) => {
+                const eventInfo = doc.events[key]; %>
+                <section class="border-t-0 border-r-0 border-b<%- index === events.length - 1 ? "-0" : "" %> border-l-0 border-solid border-gray-300 py-16">
+                  <a name="event-<%- key %>"></a>
+                  <div class="inline-block eds-heading eds-heading.md mb-8">
+                    <h3 class="eds-heading eds-heading.md m-0 inline-block">
+                      <a href="#event-<%- key %>" class="eds-link no-underline"><%- key %></a>
+                    </h3>
+                    <% if (eventInfo) { %>
+                      <span class="font-700">:</span>
+                      <code class="eds-heading eds-heading.md font-400 font-mono text-magenta-600">
+                        <%= eventInfo.type %>
+                      </code>
+                    <% } %>
+                  </div>
+                  <% if (eventInfo) { %>
+                    <p class="m-0"><%= eventInfo.description %></p>
+                    <p class="mt-8 mr-0 mb-0 ml-0">
+                      <i>
+                        <%-
+                        [
+                          eventInfo.bubbles ? "Bubbles" : "Does not bubble",
+                          eventInfo.cancelable ? "cancelable" : "not cancelable",
+                        ].join(", ")
+                        %>
+                      </i>
+                    </p>
+                    <% if (eventInfo.example) { %>
+                      <div class="mt-16">
+                        <%- eventInfo.example %>
+                        <pre style="margin:0;margin-top:8px;padding:0"><code class="language-markup" style="margin:0;padding:0"><%- Prism.highlight(Prism.plugins.NormalizeWhitespace.removeIndent(eventInfo.example).trim(), Prism.languages.markup) %></code></pre>
+                      </div>
+                    <% } %>
+                  <% } else {
+                    let link = `https://developer.mozilla.org/en-US/docs/Web/API/Element/${key}_event`;
+                    switch (key) {
+                       case "change":
+                         link = "https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/change_event";
+                         break;
+                    }
+                    %>
+                    <p class="m-0">See <a class="eds-link" href="<%- link %>" target="_blank"><%- link %></a>.</p>
+                  <% } %>
+                </section>
+              <% }) %>
+            <% } %>
+            <% if (doc.slots) { %>
+              <h2 class="eds-heading eds-heading.mdplus mt-48 mb-0">
+                <code class="text-magenta-600"><%- child || "" %></code>
+                Slots
+              </h2>
+              <% Object.keys(doc.slots).forEach((key, index, slots) => {
+              const slot = doc.slots[key]; %>
+              <section class="border-t-0 border-r-0 border-b<%- index === slots.length - 1 ? "-0" : "" %> border-l-0 border-solid border-gray-300 py-16">
+                <a name="slot-<%- key %>"></a>
+                <div class="inline-block eds-heading eds-heading.md mb-8">
+                  <h3 class="eds-heading eds-heading.md m-0 inline-block">
+                    <a href="#slot-<%- key %>" class="eds-link no-underline"><%- key %></a>
+                  </h3>
+                </div>
+                <p class="m-0"><%- slot.description %></p>
+                <% if (slot.example) { %>
+                  <div class="mt-16">
+                    <%- slot.example %>
+                    <pre style="margin:0;margin-top:8px;padding:0"><code class="language-markup" style="margin:0;padding:0"><%- Prism.highlight(Prism.plugins.NormalizeWhitespace.removeIndent(slot.example).trim(), Prism.languages.markup) %></code></pre>
+                  </div>
+                <% } %>
+              </section>
+              <% }) %>
+            <% } %>
+            <% }) %>
+            <% if (doc.notes) { %>
+              <h2 class="eds-heading eds-heading.mdplus mt-48 mb-0">Notes</h2>
+              <ul>
+                <% Object.keys(doc.notes).forEach((key, index) => { %>
+                <li><%- doc.notes[key] %></li>
+                <% }) %>
+              </ul>
+            <% } %>
+          </div>
+        </div>
+      </main>
+    </div>
+    <script>
+      (function alignGrid() {
+        var logoCell = document.getElementById("logoCell");
+        var navCell = document.getElementById("navCell");
+        navCell.style.flexBasis = logoCell.offsetWidth + "px";
+        var navCellResize = setInterval(function() {
+          navCell.style.flexBasis = logoCell.offsetWidth + "px";
+          if (navCell.offsetWidth === logoCell.offsetWidth) clearInterval(navCellResize);
+        }, 100);
+      })();
+    </script>
+    <script src="dist/eds-core.js"></script>
+    <% (doc.lib || []).forEach(lib => { %>
+    <script src="doc-lib/<%- lib %>"></script>
+    <% }) %>
+    <script src="<%- doc.js %>"></script>
+  </body>
+</html>

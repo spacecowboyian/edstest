@@ -1,0 +1,46 @@
+<% const title = "Modal"; %>
+
+<title><%= title %></title>
+
+<section class="example-page">
+
+  <%- include("_header.ejs", {
+    classes: ["example-page_#header"],
+    title,
+    stability: 2,
+    summary: "A modal is an overlay that's automatically placed on top of the application's main window. It disables the main window but keeps it visible in the background until the user takes a specific action."
+  }) _%>
+
+  <div class="example-page_#content">
+
+    <button class="eds-button eds-button.primary" onclick="this.nextElementSibling.classList.add('eds-modal\.open')">
+      <svg viewBox="0 0 24 24" class="eds-button_#icon">
+        <path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/>
+      </svg>
+      <span class="eds-button_#label">Launch Modal</span>
+    </button>
+
+    <section class="eds-modal" onclick="if (event.srcElement === this) this.classList.remove('eds-modal\.open')">
+      <div class="eds-modal_#container">
+        <button
+          class="eds-modal_#close eds-modal_.eds-link eds-link"
+          onclick="this.closest('.eds-modal').classList.remove('eds-modal\.open')">
+          <svg fill="currentColor" width="100%" height="100%" viewBox="0 0 24 24">
+            <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+          </svg>
+        </button>
+        <header class="eds-modal_#header">
+          <h1 class="eds-modal_.title">Modal title</h1>
+        </header>
+        <p class="eds-modal_#content">
+          Modal content
+        </p>
+        <footer class="eds-modal_#footer">
+          <button class="eds-button eds-button.basic" onclick="this.closest('.eds-modal').classList.remove('eds-modal\.open')">Dismiss</button>
+        </footer>
+      </div>
+    </section>
+
+  </div>
+
+</section>

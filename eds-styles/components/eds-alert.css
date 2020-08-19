@@ -1,0 +1,144 @@
+.eds-alert {
+  @apply
+    antialiased
+    bg-white
+    font-sans
+    overflow-hidden
+    relative
+    rounded
+    text-black
+  ;
+
+  &::after {
+    @apply
+      absolute
+      bg-auto
+      bg-no-repeat
+      bg-top-12
+      bottom-0
+      h-full
+      left-0
+      top-0
+      w-28
+    ;
+
+    content: "";
+  }
+
+  &\.border {
+    @apply
+      border
+      border-solid
+      border-gray-300
+    ;
+  }
+
+  &_\#content {
+    @apply
+      block
+      ml-40
+      mr-32
+      my-0
+      py-12
+      text-16
+    ;
+  }
+
+  &_\#title, &_\#message {
+    @apply
+      m-0
+      text-16
+    ;
+  }
+
+  &_\#title {
+    @apply font-500;
+  }
+ 
+  &_\#message {
+    @apply
+      font-400
+      mt-12
+    ;
+  }
+
+  &_\#close {
+    @apply
+      absolute
+      bg-transparent
+      border-0
+      mr-12
+      mt-12
+      p-0
+      right-0
+    ;
+
+    /* Material Design claims that its button is compatible with MD Icons, Font Awesome, SVG, and ???.
+     * Therefore, we apply the same styles here as its mdc-button__icon class.
+     * See also: https://material.io/develop/web/components/buttons/
+     */
+    $size: 18px;
+    width: $size;
+    height: $size;
+    font-size: $size;
+    fill: currentColor;
+  }
+
+  &\.gray {
+    @apply bg-gray-100;
+  }
+
+  &\.shadow {
+    @apply shadow-sm;
+  }
+
+  &\.info {
+    &::after {
+      @apply
+        bg-blue-200
+        text-blue-600
+      ;
+      background-image: svg-load("./eds-alert.assets/info.svg", fill: ref(^&::after, color));
+    }
+
+    ^&_\#title {
+      @apply text-blue-600;
+    }
+  }
+
+  &\.success {
+    &::after {
+      @apply
+        bg-green-200
+        text-green-700
+      ;
+      background-image: svg-load("./eds-alert.assets/success.svg", fill: ref(^&::after, color));
+    }
+
+    ^&_\#title {
+      @apply text-green-700;
+    }
+  }
+
+  &\.warning {
+    &::after, ^&_\#title {
+      @apply text-orange-800;
+    }
+
+    &::after {
+      @apply bg-yellow-200;
+      background-image: svg-load("./eds-alert.assets/warning.svg", fill: ref(^&::after, color));
+    }
+  }
+
+  &\.error {
+    &::after, ^&_\#title {
+      @apply text-red-700;
+    }
+
+    &::after {
+      @apply bg-red-200;
+      background-image: svg-load("./eds-alert.assets/error.svg", fill: ref(^&::after, color));
+    }
+  }
+}

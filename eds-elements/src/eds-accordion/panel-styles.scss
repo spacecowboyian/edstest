@@ -1,0 +1,10 @@
+@import "@experian/eds-styles/dist/components/eds-details";
+@import "@experian/eds-styles/dist/components/eds-accordion_.eds-details";
+
+.eds-details:not(.first) {
+  @extend .eds-accordion_\.eds-details:not(:first-child);
+}
+
+.eds-details:not(.last) {
+  @extend .eds-accordion_\.eds-details:not(:last-child);
+}

@@ -1,0 +1,275 @@
+.eds-button {
+  @apply
+    antialiased
+    border
+    border-solid
+    cursor-default
+    inline-flex
+    items-center
+    justify-center
+    font-500
+    font-sans
+    h-32
+    px-20
+    rounded
+    text-14
+    transition-150
+    transition-bg
+    transition-ease
+  ;
+
+  &:focus {
+    @apply outline-none;
+  }
+
+  &:disabled {
+    @apply cursor-not-allowed;
+  }
+
+  &\.inverse {
+    @apply
+      bg-white-a20
+      border-white-a30
+      text-white
+    ;
+
+    &:hover {
+      @apply bg-white-a30;
+    }
+
+    &:focus {
+      @apply
+        border-white
+        shadow-outline-white
+      ;
+    }
+
+    &:active {
+      @apply bg-white-a40;
+    }
+
+    &:disabled {
+      @apply
+        bg-white-a10
+        border-white-a20
+        text-white-a60
+      ;
+    }
+  }
+
+  &\.basic {
+    @apply
+      bg-blue-100
+      border-blue-300
+      text-blue-600
+    ;
+
+    &:hover {
+      @apply bg-blue-200;
+    }
+
+    &:focus {
+      @apply
+        border-blue-600
+        outline-none
+        shadow-outline-blue-600
+      ;
+    }
+
+    &:active {
+      @apply
+        bg-blue-300
+      ;
+    }
+
+    &:disabled {
+      @apply
+        bg-gray-100
+        border-gray-400
+        text-gray-600
+      ;
+    }
+  }
+
+  &\.primary {
+    @apply
+      bg-blue-600
+      border-blue-700
+      text-white
+    ;
+
+    &:hover {
+      @apply bg-blue-700;
+    }
+
+    &:focus {
+      @apply
+        border-blue-700
+        shadow-outline-blue-700
+      ;
+    }
+
+    &:active {
+      @apply bg-blue-800;
+    }
+
+    &:disabled {
+      @apply
+        bg-gray-200
+        border-gray-400
+        text-gray-600
+      ;
+    }
+  }
+
+  &\.tertiary {
+    @apply
+      bg-transparent
+      border-transparent
+      px-12
+      text-blue-600
+    ;
+
+    &:hover {
+      @apply text-blue-700;
+    }
+
+    &:focus {
+      @apply
+        border-blue-600
+        shadow-outline-blue-600
+      ;
+    }
+
+    &:active {
+      @apply
+        bg-blue-100
+        text-blue-800
+      ;
+    }
+
+    &:disabled {
+      @apply
+        bg-transparent
+        text-gray-600
+      ;
+    }
+  }
+
+  &\.basic-inverse {
+    @apply
+      bg-white-a20
+      border-white-a30
+      text-white
+    ;
+
+    &:hover {
+      @apply bg-white-a30;
+    }
+
+    &:focus {
+      @apply
+        border-white
+        shadow-outline-white
+      ;
+    }
+
+    &:active {
+      @apply bg-white-a40;
+    }
+  }
+
+  &\.primary-inverse {
+    @apply
+      bg-white-a80
+      border-white-a90
+      text-purple-700 /* At the moment, the "inverse" color is always purple. */
+    ;
+
+    &:hover {
+      @apply
+        bg-white-a90
+        border-white
+      ;
+    }
+
+    &:focus {
+      @apply
+        border-white
+        shadow-outline-white
+      ;
+    }
+
+    &:active {
+      @apply bg-white;
+    }
+  }
+
+  &\.basic-inverse, &\.primary-inverse {
+    &:disabled {
+      @apply
+        bg-white-a10
+        border-white-a20
+        text-white-a60
+      ;
+    }
+  }
+
+  &\.tertiary-inverse {
+    @apply
+      bg-transparent
+      border-transparent
+      px-12
+      text-gray-100
+    ;
+
+    &:hover {
+      @apply text-white;
+    }
+
+    &:focus {
+      @apply
+        border-white
+        shadow-outline-white
+      ;
+    }
+
+    &:active {
+      @apply
+        bg-white-a20
+        text-white
+      ;
+    }
+
+    &:disabled {
+      @apply
+        bg-transparent
+        text-white-a60
+      ;
+    }
+  }
+
+  &\.compact {
+    @apply px-8;
+  }
+
+  &_\#icon + &_\#label {
+    @apply ml-4;
+  }
+
+  &_\#label + &_\#icon {
+    @apply ml-4;
+  }
+
+  &_\#icon {
+    /* Material Design claims that its button is compatible with MD Icons, Font Awesome, SVG, and ???.
+     * Therefore, we apply the same styles here as its mdc-button__icon class.
+     * See also: https://material.io/develop/web/components/buttons/
+     */
+    $size: 18px;
+    width: $size;
+    height: $size;
+    font-size: $size;
+    fill: currentColor;
+  }
+}

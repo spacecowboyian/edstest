@@ -1,0 +1,15 @@
+.eds-primary-nav-item\.eds-link {
+  @apply no-underline;
+
+  &::after {
+    background-image: svg-load("eds-primary-nav-item.assets/marker.svg", fill: ref(.eds-link, color));
+  }
+
+  &:hover::after {
+    background-image: svg-load("eds-primary-nav-item.assets/marker.svg", fill: ref(.eds-link:hover, color));
+  }
+}
+
+.eds-primary-nav-item\.eds-link.eds-link\.selected::after { /* This is not ideal as chaining CSS classes increases specificity. */
+  background-image: svg-load("eds-primary-nav-item.assets/marker.svg", fill: ref(.eds-link\.selected, color));
+}

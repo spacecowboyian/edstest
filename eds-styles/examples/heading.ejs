@@ -1,0 +1,21 @@
+<% const title = "Heading"; %>
+
+<title><%= title %></title>
+
+<section class="example-page">
+
+  <%- include("_header.ejs", {
+    classes: ["example-page_#header"],
+    title,
+    stability: 2,
+    summary: "Headings should be used to provide meaningful titles to pages or as separators for groups of content."
+  }) _%>
+
+  <div class="example-page_#content">
+    <% ["xl", "xl-caps", "lg", "lg-caps", "mdplus", "mdplus-caps", "md", "md-caps", "sm", "sm-caps"].forEach((variant, i) => { %>
+    <div class="eds-heading eds-heading.<%-variant%><%- i ? " mt-12" : "" %>">Experian Design System</div><%
+    }) %>
+
+  </div>
+
+</section>

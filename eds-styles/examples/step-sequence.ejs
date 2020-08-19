@@ -1,0 +1,74 @@
+<% const title = "Step Sequence"; %>
+
+<title><%= title %></title>
+
+<section class="example-page">
+
+  <%- include("_header.ejs", {
+    classes: ["example-page_#header"],
+    title,
+    stability: 1,
+    summary: "..."
+  }) _%>
+
+  <div class="example-page_#content">
+
+    <h2>Horizontal</h2>
+
+    <ol class="eds-step-sequence mb-24" style="width: 400px;">
+      <li class="eds-step eds-step.visited">Step 1</li>
+      <li class="eds-step eds-step.visited">Step 2 - long label that wraps</li>
+      <li class="eds-step eds-step.current">Step 3</li>
+      <li class="eds-step">Step 4</li>
+      <li class="eds-step">Step 5</li>
+    </ol>
+
+    <ol class="eds-step-sequence mb-24" style="width: 400px;">
+      <li class="eds-step eds-step.current">Step 1</li>
+      <li class="eds-step eds-step">Step 2 - long label that wraps</li>
+      <li class="eds-step eds-step">Step 3</li>
+    </ol>
+
+    <ol class="eds-step-sequence mb-24" style="width: 400px;">
+      <li class="eds-step eds-step.visited">Step 1</li>
+      <li class="eds-step eds-step.visited">Step 2 - long label that wraps</li>
+      <li class="eds-step eds-step.current">Step 3</li>
+    </ol>
+
+    <ol class="eds-step-sequence mb-24" style="width: 400px;">
+      <li class="eds-step eds-step.visited eds-step.can-return">Step 1</li>
+      <li class="eds-step eds-step.visited eds-step.can-return">Step 2 - long label that wraps</li>
+      <li class="eds-step eds-step.current">Step 3</li>
+    </ol>
+
+    <h2>Vertical</h2>
+
+    <ol class="eds-step-sequence eds-step-sequence.vertical mb-24" style="width: 200px;">
+      <li class="eds-step eds-step.visited">Step 1</li>
+      <li class="eds-step eds-step.visited">Step 2 - long label that wraps</li>
+      <li class="eds-step eds-step.current">Step 3</li>
+      <li class="eds-step">Step 4</li>
+      <li class="eds-step">Step 5</li>
+    </ol>
+
+    <ol class="eds-step-sequence eds-step-sequence.vertical mb-24" style="width: 200px;">
+      <li class="eds-step eds-step.current">Step 1</li>
+      <li class="eds-step eds-step">Step 2 - long label that wraps</li>
+      <li class="eds-step eds-step">Step 3</li>
+    </ol>
+
+    <ol class="eds-step-sequence eds-step-sequence.vertical mb-24" style="width: 200px;">
+      <li class="eds-step eds-step.visited">Step 1</li>
+      <li class="eds-step eds-step.visited">Step 2 - long label that wraps</li>
+      <li class="eds-step eds-step.current">Step 3</li>
+    </ol>
+
+    <ol class="eds-step-sequence eds-step-sequence.vertical mb-24" style="width: 200px;">
+      <li class="eds-step eds-step.visited eds-step.can-return">Step 1</li>
+      <li class="eds-step eds-step.visited eds-step.can-return">Step 2 - long label that wraps</li>
+      <li class="eds-step eds-step.current">Step 3</li>
+    </ol>
+
+  </div>
+
+</section>

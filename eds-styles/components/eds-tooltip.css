@@ -1,0 +1,128 @@
+.eds-tooltip {
+  $marker-width: 8px;
+  $marker-length: 15px;
+
+  @apply
+    antialiased
+    bg-black
+    font-400
+    font-sans
+    inline-block
+    m-16
+    px-16
+    py-8
+    relative
+    rounded
+    shadow-sm
+    text-14
+    text-white
+  ;
+
+  &_\#marker {
+    @apply absolute;
+  }
+
+  &\.top, &\.bottom {
+    &, &-start, &-end {
+      @apply
+        mr-0
+        ml-0
+      ;
+
+      ^^&_\#marker {
+        width: $marker-length;
+        height: $marker-width;
+      }
+    }
+
+    ^&_\#marker {
+      left: calc(50% - $marker-length / 2); /* default for unmanaged marker position */
+    }
+
+    &-start {
+      ^^&_\#marker {
+        left: ref(^^^&, border-radius); /* default for unmanaged marker position */
+      }
+    }
+
+    &-end {
+      ^^&_\#marker {
+        right: ref(^^^&, border-radius); /* default for unmanaged marker position */
+      }
+    }
+  }
+
+  &\.top {
+    &, &-start, &-end {
+      @apply mt-0;
+
+      ^^&_\#marker {
+        bottom: calc(0px - $marker-width);
+        background-image: svg-load("eds-tooltip.assets/marker-top.svg", fill: ref(^^^&, background-color) );
+      }
+    }
+  }
+
+  &\.bottom {
+    &, &-start, &-end {
+      @apply mb-0;
+
+      ^^&_\#marker {
+        top: calc(0px - $marker-width);
+        background-image: svg-load("eds-tooltip.assets/marker-bottom.svg", fill: ref(^^^&, background-color) );
+      }
+    }
+  }
+
+  &\.right, &\.left {
+    &, &-start, &-end {
+      @apply
+        mt-0
+        mb-0
+      ;
+
+      ^^&_\#marker {
+        width: $marker-width;
+        height: $marker-length;
+      }
+    }
+
+    ^&_\#marker {
+      top: calc(50% - $marker-length / 2); /* default for unmanaged marker position */
+    }
+
+    &-start {
+      ^^&_\#marker {
+        top: ref(^^^&, border-radius); /* default for unmanaged marker position */
+      }
+    }
+
+    &-end {
+      ^^&_\#marker {
+        bottom: ref(^^^&, border-radius); /* default for unmanaged marker position */
+      }
+    }
+  }
+
+  &\.right {
+    &, &-start, &-end {
+      @apply mr-0;
+
+      ^^&_\#marker {
+        left: calc(0px - $marker-width);
+        background-image: svg-load("eds-tooltip.assets/marker-right.svg", fill: ref(^^^&, background-color) );
+      }
+    }
+  }
+
+  &\.left {
+    &, &-start, &-end {
+      @apply ml-0;
+
+      ^^&_\#marker {
+        right: calc(0px - $marker-width);
+        background-image: svg-load("eds-tooltip.assets/marker-left.svg", fill: ref(^^^&, background-color) );
+      }
+    }
+  }
+}

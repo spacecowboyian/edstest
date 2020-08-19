@@ -1,0 +1,22 @@
+.eds-accordion_\.eds-details {
+  &:not(:first-child) {
+    @apply rounded-t-none;
+  }
+
+  &:not(:last-child) {
+    @apply
+      border-b
+      rounded-b-none
+    ;
+
+    border-bottom-color: transparent;
+
+    &:focus-within {
+      border-bottom-color: ref(.eds-details:focus-within, border-color);
+
+      & + ^^& {
+        border-top-color: ref(.eds-details:focus-within, border-color);
+      }
+    }
+  }
+}

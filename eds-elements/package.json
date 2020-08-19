@@ -1,0 +1,51 @@
+{
+  "name": "@experian/eds-elements",
+  "version": "3.2.1-6",
+  "description": "Layer 3 of EDS based on LitElement",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://bitbucketglobal.experian.local/scm/eds/eds-elements.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "scripts": {
+    "build": "node build.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepublishOnly": "npm run build",
+    "start": "webpack-dev-server",
+    "watch": "npm-watch"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.9.6",
+    "@babel/plugin-proposal-class-properties": "^7.8.3",
+    "@babel/plugin-proposal-decorators": "^7.8.3",
+    "@babel/polyfill": "^7.8.7",
+    "@babel/preset-env": "^7.9.6",
+    "@experian/eds-styles": "file:../eds-styles",
+    "@popperjs/core": "^2.4.0",
+    "@webcomponents/webcomponentsjs": "^2.4.3",
+    "ace-builds": "^1.4.11",
+    "babel-loader": "^8.1.0",
+    "copy": "^0.3.2",
+    "ejs": "^2.7.1",
+    "element-closest": "^3.0.2",
+    "eslint": "^6.8.0",
+    "glob": "^7.1.6",
+    "lit-element": "^2.3.1",
+    "node-sass": "^4.14.1",
+    "npm-watch": "^0.7.0",
+    "prismjs": "^1.20.0",
+    "raw-loader": "^3.1.0",
+    "rimraf": "^3.0.2",
+    "sass-loader": "^8.0.2",
+    "tailwindcss-transitions": "^2.2.0",
+    "uglifyjs-webpack-plugin": "^2.2.0",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0"
+  },
+  "watch": {
+    "build": "src/**/*.js"
+  }
+}

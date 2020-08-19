@@ -1,0 +1,92 @@
+.eds-primary-header {
+  @apply
+
+    bg-white
+
+    antialiased
+    font-400
+    font-sans
+    text-16
+    text-black
+
+    border-b-2
+    border-l-0
+    border-r-0
+    border-t-0
+    border-raspberry-600-blue-700
+    border-solid
+
+    h-64
+    border-box
+
+    flex
+    flex-row
+    items-center
+
+  ;
+
+  &_\#logo {
+    @apply
+      px-16
+      h-full
+      flex
+      items-center
+    ;
+  }
+
+  &_\#title {
+    @apply
+      font-400
+      text-16
+
+      border-t-0
+      border-r-0
+      border-b-0
+      border-l
+      border-solid
+      border-gray-400
+
+      m-0
+
+      pt-8
+      pl-16
+
+      h-32
+      border-box
+    ;
+  }
+
+  &_\.section {
+    @apply
+      h-full
+ 
+      m-0
+      p-0
+
+      flex-1
+      flex
+      flex-row
+      justify-end
+    ;
+  }
+
+  &_\.icon {
+    /* Material Design claims that its button is compatible with MD Icons, Font Awesome, SVG, and ???.
+     * Therefore, we apply the same styles here as its mdc-button__icon class.
+     * See also: https://material.io/develop/web/components/buttons/
+     */
+    $size: 24px;
+    width: $size;
+    height: $size;
+    font-size: $size;
+    fill: currentColor;
+
+    &\.prepend {
+      @apply mr-8;
+    }
+
+    &\.append {
+      @apply ml-4;
+    }
+  }
+}

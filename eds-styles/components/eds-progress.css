@@ -1,0 +1,124 @@
+@keyframes eds-progress-indeterminate {
+  100% { background-position: right; }
+}
+
+.eds-progress {
+  @apply
+    inline-block
+    relative
+    h-8
+    border-box
+    border
+    border-solid
+    rounded-full
+    overflow-hidden
+    bg-white
+  ;
+
+  &_\.progress {
+    @apply
+      absolute
+      top-0
+      right-0
+      bottom-0
+      left-0
+      appearance-none
+      bg-transparent
+      border-0
+      h-full
+      w-full
+    ;
+
+    &::-webkit-progress-bar {
+      @apply bg-transparent;
+    }
+
+    &::-ms-fill {
+      @apply border-0;
+      animation-name: none;
+    }
+
+    &::-moz-progress-bar {
+      @apply bg-transparent;
+    }
+  }
+
+  &_\#primary {
+    @apply z-10;
+  }
+
+  &\.magenta {
+    @apply border-magenta-600;
+
+    ^&_\#primary {
+      &::-webkit-progress-value {
+        @apply bg-magenta-600;
+      }
+      &:not(:indeterminate)::-moz-progress-bar {
+        @apply bg-magenta-600;
+      }
+      &::-ms-fill {
+        @apply bg-magenta-600;
+      }
+      &:indeterminate {
+        @apply bg-magenta-600;
+      }
+    }
+
+    ^&_\#baseline {
+      &::-webkit-progress-value {
+        @apply bg-magenta-300;
+      }
+      &::-moz-progress-bar {
+        @apply bg-magenta-300;
+      }
+      &::-ms-fill {
+        @apply bg-magenta-300;
+      }
+      &:indeterminate {
+        @apply bg-magenta-300;
+      }
+    }
+  }
+
+  &\.purple {
+    @apply border-purple-600;
+
+    ^&_\#primary {
+      &::-webkit-progress-value {
+        @apply bg-purple-600;
+      }
+      &:not(:indeterminate)::-moz-progress-bar {
+        @apply bg-purple-600;
+      }
+      &::-ms-fill {
+        @apply bg-purple-600;
+      }
+      &:indeterminate {
+        @apply bg-purple-600;
+      }
+    }
+
+    ^&_\#baseline {
+      &::-webkit-progress-value {
+        @apply bg-purple-300;
+      }
+      &::-moz-progress-bar {
+        @apply bg-purple-300;
+      }
+      &::-ms-fill {
+        @apply bg-purple-300;
+      }
+      &:indeterminate {
+        @apply bg-purple-300;
+      }
+    }
+  }
+
+  &_\.progress:indeterminate {
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0.35), rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.35), transparent, rgba(255, 255, 255, 0.35));
+    background-size: 50%;
+    animation: eds-progress-indeterminate 0.5s infinite;
+    animation-timing-function: linear;
+  }
+}

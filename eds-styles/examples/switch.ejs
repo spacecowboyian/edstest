@@ -1,0 +1,51 @@
+<% const title = "Switch"; %>
+
+<title><%= title %></title>
+
+<section class="example-page">
+
+  <%- include("_header.ejs", {
+    classes: ["example-page_#header"],
+    title,
+    stability: 2,
+    summary: "Fill this in!"
+  }) _%>
+
+  <div class="example-page_#content">
+
+    <div class="flex flex-row items-center">
+      <label class="eds-switch mr-16">
+        <input type="checkbox" name="foo" class="eds-switch_#input" checked />
+        <span class="eds-switch_#label">Label 1</span>
+      </label>
+      <label class="eds-switch mr-16">
+        <input type="checkbox" name="foo" class="eds-switch_#input" />
+        <span class="eds-switch_#label">Label 2</span>
+      </label>
+      <label class="eds-switch">
+        <input type="checkbox" name="foo" class="eds-switch_#input" disabled />
+        <span class="eds-switch_#label">Label 3</span>
+      </label>
+    </div>
+
+    <div class="eds-field mt-32">
+      <div class="eds-field_#label">Communication Preference</div>
+      <div class="eds-field_#control eds-field_.eds-control-list eds-control-list">
+        <label class="eds-control-list_.control eds-control-list_.eds-switch eds-switch">
+          <input type="checkbox" name="commpref" class="eds-switch_#input" checked />
+          <span class="eds-switch_#label">SMS</span>
+        </label>
+        <label class="eds-control-list_.control eds-control-list_.eds-switch eds-switch">
+          <input type="checkbox" name="commpref" class="eds-switch_#input" />
+          <span class="eds-switch_#label">Email</span>
+        </label>
+        <label class="eds-control-list_.control eds-control-list_.eds-switch eds-switch">
+          <input type="checkbox" name="commpref" class="eds-switch_#input" />
+          <span class="eds-switch_#label">Phone</span>
+        </label>
+      </div>
+    </div>
+
+  </div>
+
+</section>

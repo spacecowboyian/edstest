@@ -1,0 +1,65 @@
+.eds-card {
+  @apply
+    flex
+    flex-col
+    border-0
+    p-0
+  ;
+
+  &_\#content {
+    @apply flex-1;
+  }
+
+  &_\#header, &_\#content, &_\#footer {
+    @apply
+      m-0
+      px-20
+      py-16
+
+      border
+      border-solid
+      border-gray-300
+
+      antialiased
+      font-400
+      font-sans
+      text-16
+      leading-normal
+
+      bg-white
+      text-black
+    ;
+
+    ^&\.gray & {
+      @apply bg-gray-100;
+    }
+
+    &:first-child {
+      @apply rounded-t-lg;
+    }
+
+    &:not(:first-child) {
+      @apply border-t-0;
+    }
+
+    &:last-child {
+      @apply rounded-b-lg;
+    }
+
+    &:first-child, &:last-child {
+      @apply overflow-hidden;
+    }
+
+    &\.no-padding {
+      @apply p-0;
+    }
+  }
+
+  &_\.title {
+    @apply
+      font-700
+      text-16
+      m-0
+    ;
+  }
+}

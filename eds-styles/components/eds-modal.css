@@ -1,0 +1,94 @@
+.eds-modal {
+  @apply
+    fixed
+    overflow-scroll
+    top-0
+    right-0
+    bottom-0
+    left-0
+    z-10
+    bg-white-a80
+    opacity-0
+  ;
+
+  transform: scale(0);
+  transition: transform 0ms ease 200ms, opacity 150ms ease 50ms;
+
+  &\.open {
+    @apply opacity-100;
+    transform: scale(1);
+    transition: transform 0ms ease 0ms, opacity 150ms ease 0ms;
+  }
+
+  &_\#container {
+    @apply
+      absolute
+      block
+      bg-white
+      rounded-lg
+      shadow-sm
+      border
+      border-solid
+      border-gray-300
+      px-32
+      py-24
+      antialiased
+      font-400
+      font-sans
+      text-16
+      text-black
+      opacity-0
+    ;
+
+    transform: scale(0.75) translate(-60%);
+    margin-left: 50%;
+    top: 10%;
+    min-width: 256px;
+    max-width: 80%;
+    background-clip: border-box;
+    transition: transform 150ms ease 0ms, opacity 75ms ease 0ms;
+
+    ^&\.open & {
+      @apply opacity-100;
+      transform: scale(1) translate(-50%);
+      transition: transform 100ms ease 0ms, opacity 75ms ease 25ms;
+    }
+  }
+
+  &_\#close {
+    @apply
+      absolute
+      bg-transparent
+      border-0
+      mr-24
+      p-0
+      right-0
+    ;
+
+    /* Material Design claims that its button is compatible with MD Icons, Font Awesome, SVG, and ???.
+     * Therefore, we apply the same styles here as its mdc-button__icon class.
+     * See also: https://material.io/develop/web/components/buttons/
+     */
+    $size: 18px;
+    width: $size;
+    height: $size;
+    font-size: $size;
+    fill: currentColor;
+  }
+
+  &_\#header {
+    @apply mb-20;
+  }
+
+  &_\#footer {
+    @apply mt-20;
+  }
+
+  &_\.title {
+    @apply
+      m-0
+      font-500
+      text-18
+    ;
+  }
+}

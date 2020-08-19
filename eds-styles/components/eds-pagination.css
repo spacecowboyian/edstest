@@ -1,0 +1,21 @@
+.eds-pagination {
+  @apply
+    flex
+    flex-row
+    items-center
+    justify-end
+    text-16
+    text-black
+    font-sans
+    font-400
+    antialiased
+  ;
+
+  &_\.pagesize-label {
+    @apply ml-32;
+  }
+
+  &_\.pagesize-label, &_\.pagesize-select, &_\.range {
+    @apply mr-8;
+  }
+}

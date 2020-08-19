@@ -1,0 +1,72 @@
+<% const title = "Select"; %>
+
+<title><%= title %></title>
+
+<section class="example-page">
+
+  <%- include("_header.ejs", {
+    classes: ["example-page_#header"],
+    title,
+    stability: 2,
+    summary: "Select is a form component that provides a menu of options."
+  }) _%>
+
+  <div class="example-page_#content">
+
+    <div class="flex mt-32">
+
+      <label class="eds-field w-256">
+        <div class="eds-field_#label">Default Sort</div>
+        <div class="eds-field_#control eds-field_.eds-input eds-input">
+          <select class="eds-input_#input eds-input_#input.dropdown">
+            <option>Applicant Name</option>
+            <option selected>Case ID</option>
+            <option>Event Timestamp</option>
+          </select>
+        </div>
+        <div class="eds-field_#assistive-text">This can be overridden.</div>
+      </label>
+
+      <label class="eds-field w-256 ml-8">
+        <div class="eds-field_#label">Salary Range</div>
+        <div class="eds-field_#control eds-field_.eds-input eds-input">
+          <div class="eds-input_#prepend eds-input_.eds-input-addon eds-input-addon eds-input-addon.prepend eds-input-addon.gray">
+            <span class="material-icons eds-input-addon_#content eds-input-addon_#content.text">USD</span>
+          </div>
+          <select class="eds-input_#input eds-input_#input.dropdown">
+            <option>0 to 29,999</option>
+            <option>30,000 to 69,999</option>
+            <option>70,000 to 149,999</option>
+            <option>150,000+</option>
+          </select>
+          <div class="eds-input_#append eds-input_.eds-input-addon eds-input-addon eds-input-addon.append">
+            <button
+              class="material-icons eds-input-addon_#content eds-input-addon_#content.icon eds-input-addon_.eds-link eds-link"
+              onclick="(function() { var field = this.closest('.eds-field').querySelector('.eds-input-addon_\\#content\\.text'); field.innerText = field.innerText==='USD'?'GBP':'USD'; }.bind(this))()"
+              >
+              swap_vert
+            </button>
+          </div>
+        </div>
+      </label>
+
+      <label class="eds-field w-256 ml-8">
+        <div class="eds-field_#label">Preferred Days</div>
+        <div class="eds-field_#control eds-field_.eds-input eds-input h-160">
+          <select class="eds-input_#input eds-input_#input.multiselect" size="7" multiple>
+            <option selected>Sunday</option>
+            <option>Monday</option>
+            <option>Tuesday</option>
+            <option>Wednesday</option>
+            <option>Thursday</option>
+            <option>Friday</option>
+            <option selected>Saturday</option>
+          </select>
+        </div>
+      </label>
+
+    </div>
+
+  </div>
+
+</section>

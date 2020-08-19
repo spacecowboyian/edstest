@@ -1,0 +1,32 @@
+<% const title = "Badge"; %>
+
+<title><%= title %></title>
+
+<section class="example-page">
+
+  <%- include("_header.ejs", {
+    classes: ["example-page_#header"],
+    title,
+    stability: 2,
+    summary: "A badge is used to alert or notify the user. Badges only contain numerical information and are often used to represent a running count (e.g., number of unread messages)."
+  }) _%>
+
+  <div class="example-page_#content">
+
+    <div class="inline-flex p-12">
+      <div class="eds-badge mr-8">9</div>
+      <div class="eds-badge mr-8">99</div>
+      <div class="eds-badge mr-8">999</div>
+      <div class="eds-badge">9,999</div>
+    </div>
+
+    <div class="inline-flex p-12 bg-purple-700">
+      <div class="eds-badge mr-8">9</div>
+      <div class="eds-badge mr-8">99</div>
+      <div class="eds-badge mr-8">999</div>
+      <div class="eds-badge">9,999</div>
+    </div>
+
+  </div>
+
+</section>

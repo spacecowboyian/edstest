@@ -1,0 +1,44 @@
+.eds-menu-header {
+  @apply
+
+    border-box
+
+    pt-20
+    pl-20
+    m-0
+    pb-12
+
+    antialiased
+    leading-none
+    font-400
+    font-sans
+    text-14
+    truncate
+    uppercase
+
+  ;
+
+  &\.basic, &\.gray {
+    @apply text-purple-700;
+  }
+
+  &\.basic {
+    @apply bg-white;
+  }
+
+  &\.gray {
+    @apply bg-gray-100;
+  }
+
+  &\.blue, &\.raspberry {
+    @apply text-white;
+  }
+
+  &\.blue {
+    @apply bg-blue-900;
+  }
+
+  &\.raspberry {
+    @apply bg-raspberry-600;
+  }
+}

@@ -1,0 +1,36 @@
+<% const title = "Tooltip"; %>
+
+<title><%= title %></title>
+
+<section class="example-page">
+
+  <%- include("_header.ejs", {
+    classes: ["example-page_#header"],
+    title,
+    stability: 2,
+    summary: "Tooltips are floating containers that appear when the user hovers over a UI component. They provide the user with additional content without cluttering the page."
+  }) _%>
+
+  <div class="example-page_#content">
+    <%
+      ["", "-start", "-end"].forEach(alignment => {
+        ["top", "right", "bottom", "left"].forEach(side => {
+          const modifier = side + alignment;
+    %>
+    <div class="m-16 inline-block">
+      <div class="eds-tooltip eds-tooltip.<%= modifier %>" role="tooltip">
+        <div class="eds-tooltip_#content">Tooltip with <code><%= modifier %></code> modifier</div>
+        <div class="eds-tooltip_#marker"></div>
+      </div>
+    </div>
+    <%
+        })
+    %>
+    <br/>
+    <%
+      });
+    %>
+
+  </div>
+
+</section>

@@ -1,0 +1,20 @@
+.eds-sidebar {
+  &_\.eds-menu-item {
+    @apply
+      transition-150
+      transition-ease
+      transition-p
+    ;
+  }
+
+  &\.closed_\.eds-menu-item {
+    @apply
+      pl-12
+      pr-0
+    ;
+
+    ^& &_\#icon {
+      color: inherit;
+    }
+  }
+}

@@ -1,0 +1,29 @@
+@import "@experian/eds-styles/dist/components/eds-link";
+@import "@experian/eds-styles/dist/components/eds-modal";
+
+#body {
+  @extend .eds-modal;
+
+  &.visible {
+    @extend .eds-modal\.open;
+  }
+}
+
+#container {
+  @extend .eds-modal_\#container;
+  width: var(--width);
+  height: var(--height);
+}
+
+#close {
+  @extend .eds-modal_\#close;
+  @extend .eds-link;
+}
+
+::slotted(header) {
+  @extend .eds-modal_\#header;
+}
+
+::slotted(footer) {
+  @extend .eds-modal_\#footer;
+}

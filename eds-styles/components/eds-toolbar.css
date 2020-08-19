@@ -1,0 +1,48 @@
+.eds-toolbar {
+  @apply
+    flex
+    flex-row
+  ;
+
+  &_\.section {
+    @apply
+      border-t-0
+      border-r-0
+      border-b-0
+      border-l-0
+      border-solid
+      border-gray-300
+      p-8
+      flex
+      flex-row
+      items-center
+      antialiased
+      font-400
+      font-sans
+      text-16
+    ;
+
+    &:first-child {
+      @apply
+        flex-1
+        px-20
+      ;
+    }
+
+    &\.no-padding:first-child {
+      @apply px-8;
+    }
+
+    & + & {
+      @apply border-l;
+    }
+
+    ^&\.inverse & {
+      @apply
+        bg-purple-700
+        border-purple-500
+        text-white
+      ;
+    }
+  }
+}

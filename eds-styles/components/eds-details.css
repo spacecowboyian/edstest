@@ -1,0 +1,138 @@
+.eds-details {
+  @apply
+    antialiased
+    bg-gray-100
+    border
+    border-solid
+    border-gray-300
+    font-400
+    font-sans
+    relative
+    rounded-lg
+    text-14
+    text-black
+  ;
+
+  min-height: 40px;
+
+  &:focus-within {
+    @apply
+      border-blue-600
+      shadow-outline-blue-600
+    ;
+  }
+
+  &_\#summary {
+    &::-webkit-details-marker {
+      display: none;
+    }
+
+    @apply
+      absolute
+      antialiased
+      bg-transparent
+      border-0
+      border-box
+      cursor-pointer
+      font-700
+      font-sans
+      h-40
+      left-0
+      list-none
+      m-0
+      m-0
+      outline-none
+      pl-16
+      pr-0
+      py-0
+      right-0
+      text-14
+      text-black
+      text-left
+      top-0
+      w-full
+      z-20
+    ;
+
+    line-height: ref(^&_\#summary, height);
+
+    &::after {
+      @apply
+        absolute
+        bg-center
+        bg-no-repeat
+        bottom-0
+        mr-16
+        right-0
+        text-blue-600
+        top-0
+        transition-150
+        transition-ease
+        transition-transform
+        w-12
+      ;
+      content: "";
+      background-image: svg-load("./eds-details.assets/marker.svg", fill: ref(^&::after, color));
+      transform: rotate(90deg);
+    }
+  }
+
+  &_\#content {
+    @apply
+      border-b-0
+      border-l-0
+      border-r-0
+      border-solid
+      border-t
+      border-transparent
+      leading-loose
+      mx-16
+      py-20
+    ;
+  }
+
+  &_\#container {
+    @apply
+      mt-40
+      h-0
+      overflow-hidden
+    ;
+  }
+
+  &\.enhanced {
+    > ^&_\#content {
+      @apply
+        opacity-0
+        transition-150
+        transition-ease
+        transition-delay-150
+        transition-opacity
+      ;
+    }
+  }
+
+  &\.open {
+    @apply bg-white;
+
+    > ^&_\#summary::after {
+      transform: rotate(-90deg);
+    }
+
+    > ^&_\#container {
+      @apply h-auto;
+
+      > ^^&_\#content {
+        @apply
+          border-gray-300
+          opacity-100
+        ;
+      }
+    }
+  }
+
+  &[open] {
+    > ^&_\#container {
+      @apply h-auto;
+    }
+  }
+}

@@ -1,0 +1,11 @@
+.eds-control-list {
+  @apply
+    inline-flex
+    flex-col
+    items-stretch
+  ;
+
+  &_\.control:not(:last-child) {
+    @apply mb-8;
+  }
+}

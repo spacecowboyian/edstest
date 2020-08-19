@@ -1,0 +1,24 @@
+.eds-badge {
+  box-sizing: border-box;
+  display: inline-block;
+  min-width: 24px;
+  padding: 4px 6px;
+
+  @apply
+    border
+    border-solid
+    border-white
+
+    rounded-full
+    text-center
+
+    bg-red-600
+    text-white
+
+    antialiased
+    font-500
+    font-sans
+    leading-none
+    text-14
+  ;
+}

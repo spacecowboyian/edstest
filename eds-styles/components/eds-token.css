@@ -1,0 +1,53 @@
+.eds-token {
+  @apply
+    h-24
+    px-8
+
+    inline-flex
+    flex-row
+    items-center
+
+    rounded
+
+    bg-blue-200
+    text-black
+    text-14
+  ;
+
+  &, &_\#close {
+    @apply
+      antialiased
+      font-400
+      font-sans
+      leading-none
+    ;
+  }
+
+  &_\#label {
+    @apply
+      font-500
+      mr-4
+    ;
+  }
+
+  &_\#close {
+    @apply
+      my-0
+      mr-0
+      ml-8
+      p-0
+      border-0
+      bg-transparent
+      text-blue-600
+      cursor-pointer
+      text-18
+    ;
+
+    &:hover {
+      @apply
+        font-700
+        text-blue-700
+      ;
+    }
+  }
+}

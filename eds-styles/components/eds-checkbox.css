@@ -1,0 +1,120 @@
+.eds-checkbox {
+  @apply
+    inline-flex
+    flex-row
+    items-center
+  ;
+
+  &_\#input {
+    @apply
+      outline-none
+      bg-white
+      bg-no-repeat
+      bg-center
+      text-blue-600
+      rounded-sm
+      transition-150
+      transition-bg-all,border,shadow
+      transition-ease
+    ;
+
+    width: 18px;
+    height: 18px;
+ 
+    background-size: 12px 12px;
+
+    &:checked {
+      @apply
+        bg-blue-600
+        text-white
+      ;
+
+      background-image: svg-load("./eds-checkbox.assets/checkmark.svg", fill: ref(^&:checked, color));
+
+      &:disabled {
+        @apply bg-gray-300;
+      }
+    }
+
+    &:indeterminate {
+      background-image: svg-load("./eds-checkbox.assets/block.svg", fill: ref(^&, color));
+      background-size: 8px 8px;
+
+      &:disabled {
+        @apply text-gray-300;
+        background-image: svg-load("./eds-checkbox.assets/block.svg", fill: ref(^&:disabled, color));
+      }
+    }
+
+    &:focus {
+      @apply shadow-outline-blue-600;
+    }
+
+    &:disabled {
+      @apply cursor-not-allowed;
+    }
+  }
+
+  &_\#label {
+    @apply
+      antialiased
+      font-400
+      font-sans
+      text-16
+      text-black
+      ml-8
+    ;
+
+    ^&_\#input:disabled ~ & {
+      @apply text-gray-600;
+    }
+  }
+}
+
+@supports not (-ms-high-contrast: none) {
+  .eds-checkbox_\#input {
+    @apply
+      appearance-none
+      border
+      border-solid
+      border-gray-600
+    ;
+
+    &:checked, &:indeterminate, &:focus {
+      @apply border-blue-600;
+    }
+
+    &:disabled {
+      @apply border-gray-300;
+    }
+  }
+}
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .eds-checkbox_\#input {
+    &::-ms-check {
+      @apply
+        border
+        border-solid
+        border-gray-600
+
+        rounded-sm
+
+        border-box
+        w-full
+        h-full
+
+        bg-transparent
+        text-transparent
+
+        transition-150
+        transition-border
+        transition-ease
+      ;
+    }
+
+    &:focus::-ms-check, &:checked::-ms-check, &:indeterminate::-ms-check {
+      @apply border-blue-600;
+    }
+  }
+}

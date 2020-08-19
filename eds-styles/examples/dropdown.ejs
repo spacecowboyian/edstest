@@ -1,0 +1,114 @@
+<% const title = "Dropdown"; %>
+
+<title><%= title %></title>
+
+<section class="example-page">
+
+  <%- include("_header.ejs", {
+    classes: ["example-page_#header"],
+    title,
+    stability: 2,
+    summary: "A dropdown is a form element with a set of options. The user can select either single or multiple options."
+  }) _%>
+
+  <div class="example-page_#content">
+    <div class="flex flex-row">
+
+      <div class="flex flex-col w-256">
+        <div class="eds-field mb-4">
+          <div class="eds-field_#label">Preferred Days</div>
+          <div class="eds-field_#control eds-field_.eds-input eds-input">
+            <button class="eds-input_#input eds-input_#input.dropdown">
+              <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap">
+                Monday, Tuesday, Wednesday, Thursday
+              </span>
+            </button>
+          </div>
+        </div>
+        <div class="eds-popover eds-popover.reduced-padding eds-popover.no-margin" role="popover">
+          <div class="eds-popover_#content">
+            <div style="margin-bottom: 8px">
+              <div class="eds-input">
+                <input
+                  type="search"
+                  placeholder="Type to filter options..."
+                  class="eds-input_#input" />
+              </div>
+            </div>
+            <div class="eds-field" style="width: 100%">
+              <div class="eds-field_#control eds-field_.eds-control-list eds-control-list">
+                <label class="eds-control-list_.control eds-control-list_.eds-checkbox eds-checkbox">
+                  <input type="checkbox" class="eds-checkbox_#input" checked />
+                  <span class="eds-checkbox_#label">Monday</span>
+                </label>
+                <label class="eds-control-list_.control eds-control-list_.eds-checkbox eds-checkbox">
+                  <input type="checkbox" class="eds-checkbox_#input" checked />
+                  <span class="eds-checkbox_#label">Tuesday</span>
+                </label>
+                <label class="eds-control-list_.control eds-control-list_.eds-checkbox eds-checkbox">
+                  <input type="checkbox" class="eds-checkbox_#input" checked />
+                  <span class="eds-checkbox_#label">Wednesday</span>
+                </label>
+                <label class="eds-control-list_.control eds-control-list_.eds-checkbox eds-checkbox">
+                  <input type="checkbox" class="eds-checkbox_#input" checked />
+                  <span class="eds-checkbox_#label">Thursday</span>
+                </label>
+                <label class="eds-control-list_.control eds-control-list_.eds-checkbox eds-checkbox">
+                  <input type="checkbox" class="eds-checkbox_#input" />
+                  <span class="eds-checkbox_#label">Friday</span>
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex flex-col w-256 ml-16">
+        <div class="eds-field mb-4">
+          <div class="eds-field_#label">Preferred Day</div>
+          <div class="eds-field_#control eds-field_.eds-input eds-input">
+            <button class="eds-input_#input eds-input_#input.dropdown">Friday</button>
+          </div>
+        </div>
+        <div class="eds-popover eds-popover.reduced-padding eds-popover.no-margin" role="popover">
+          <div class="eds-popover_#content">
+            <div style="margin-bottom: 8px">
+              <div class="eds-input">
+                <input
+                  type="search"
+                  placeholder="Type to filter options..."
+                  class="eds-input_#input" />
+              </div>
+            </div>
+            <div class="eds-field" style="width: 100%">
+              <div class="eds-field_#control eds-field_.eds-control-list eds-control-list">
+                <label class="eds-control-list_.control eds-control-list_.eds-radio eds-radio">
+                  <input type="radio" name="pdow" class="eds-radio_#input" />
+                  <span class="eds-radio_#label">Monday</span>
+                </label>
+                <label class="eds-control-list_.control eds-control-list_.eds-radio eds-radio">
+                  <input type="radio" name="pdow" class="eds-radio_#input" />
+                  <span class="eds-radio_#label">Tuesday</span>
+                </label>
+                <label class="eds-control-list_.control eds-control-list_.eds-radio eds-radio">
+                  <input type="radio" name="pdow" class="eds-radio_#input" />
+                  <span class="eds-radio_#label">Wednesday</span>
+                </label>
+                <label class="eds-control-list_.control eds-control-list_.eds-radio eds-radio">
+                  <input type="radio" name="pdow" class="eds-radio_#input" />
+                  <span class="eds-radio_#label">Thursday</span>
+                </label>
+                <label class="eds-control-list_.control eds-control-list_.eds-radio eds-radio">
+                  <input type="radio" name="pdow" class="eds-radio_#input" checked />
+                  <span class="eds-radio_#label">Friday</span>
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</section>

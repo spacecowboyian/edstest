@@ -1,0 +1,56 @@
+<% const title = "Checkbox"; %>
+
+<title><%= title %></title>
+
+<section class="example-page">
+
+  <%- include("_header.ejs", {
+    classes: ["example-page_#header"],
+    title,
+    stability: 2,
+    summary: "Checkboxes are used to allow the user to select one or more items from a set of options."
+  }) _%>
+
+  <div class="example-page_#content">
+
+    <div class="flex flex-row items-center">
+      <label class="eds-checkbox mr-16">
+        <input type="checkbox" name="foo" class="eds-checkbox_#input" checked />
+        <span class="eds-checkbox_#label">Label 1</span>
+      </label>
+      <label class="eds-checkbox mr-16">
+        <input type="checkbox" name="foo" class="eds-checkbox_#input" />
+        <span class="eds-checkbox_#label">Label 2</span>
+      </label>
+      <label class="eds-checkbox mr-16">
+        <input type="checkbox" name="foo" class="eds-checkbox_#input" />
+        <img src="" style="width: 0; height: 0;" onerror="this.previousElementSibling.indeterminate=true" />
+        <span class="eds-checkbox_#label">Label 3</span>
+      </label>
+      <label class="eds-checkbox">
+        <input type="checkbox" name="foo" class="eds-checkbox_#input" disabled />
+        <span class="eds-checkbox_#label">Label 4</span>
+      </label>
+    </div>
+
+    <div class="eds-field mt-32">
+      <div class="eds-field_#label">Communication Preference</div>
+      <div class="eds-field_#control eds-field_.eds-control-list eds-control-list">
+        <label class="eds-control-list_.control eds-control-list_.eds-checkbox eds-checkbox">
+          <input type="checkbox" name="commpref" class="eds-checkbox_#input" checked />
+          <span class="eds-checkbox_#label">SMS</span>
+        </label>
+        <label class="eds-control-list_.control eds-control-list_.eds-checkbox eds-checkbox">
+          <input type="checkbox" name="commpref" class="eds-checkbox_#input" />
+          <span class="eds-checkbox_#label">Email</span>
+        </label>
+        <label class="eds-control-list_.control eds-control-list_.eds-checkbox eds-checkbox">
+          <input type="checkbox" name="commpref" class="eds-checkbox_#input" />
+          <span class="eds-checkbox_#label">Phone</span>
+        </label>
+      </div>
+    </div>
+
+  </div>
+
+</section>

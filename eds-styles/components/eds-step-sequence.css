@@ -1,0 +1,269 @@
+.eds-step-sequence {
+  @apply
+    p-0
+    m-0
+    list-none
+    inline-flex
+    flex-row
+    items-end
+    font-sans
+    font-400
+    text-16
+    text-black
+    antialiased
+    relative
+  ;
+
+  .eds-step {
+
+    @apply
+      p-0
+      m-0
+      relative
+      bg-white
+      text-gray-700
+    ;
+    flex: 1 1;
+    padding-bottom: 24px;
+    text-align: center;
+
+    &::before {
+      @apply
+        block
+        absolute
+      ;
+      content: '';
+      background-image: linear-gradient(to right, theme('colors.gray.300') 50%, theme('colors.gray.300') 50%);
+      width: 100%;
+      bottom: 6px;
+      height: 2px;
+    }
+
+    &:first-child {
+      &::before {
+        background-image: linear-gradient(to right, transparent 50%, theme('colors.gray.300') 50%);
+      }
+    }
+
+    &:last-child {
+      &::before {
+        background-image: linear-gradient(to left, transparent 50%, theme('colors.gray.300') 50%);
+      }
+    }
+
+    &::after {
+      @apply
+        bg-gray-300
+        inline-block
+        absolute
+      ;
+      content: '';
+      height: 14px;
+      width: 14px;
+      border-radius: 50%;
+      bottom: 0;
+      left: calc(50% - 7px);
+    }
+
+    &.eds-step\.visited {
+
+      &::after {
+        @apply text-gray-700;
+        background-color: white;
+        background-position: center;
+        background-image: svg-load("./eds-step-sequence.assets/complete.svg", fill: ref(^&::after, color));
+      }
+
+      /* Track Styles */
+      &::before {
+        background-image: linear-gradient(to right, theme('colors.gray.800') 50%, theme('colors.gray.800') 50%);
+      }
+
+      &:first-child {
+        &::before {
+          background-image: linear-gradient(to right, transparent 50%, theme('colors.gray.800') 50%);
+        }
+      }
+
+      &:last-child {
+        &::before {
+          background-image: linear-gradient(to left, transparent 50%, theme('colors.gray.800') 50%);
+        }
+      }
+
+      &.eds-step\.can-return {
+        @apply text-blue-600;
+        cursor: pointer;
+
+        &::after {
+          @apply text-blue-600;
+          background-image: svg-load("./eds-step-sequence.assets/complete.svg", fill: ref(^&::after, color));
+        }
+
+        /* Track Styles */
+        &::before {
+          background-image: linear-gradient(to right, theme('colors.blue.600') 50%, theme('colors.blue.600') 50%);
+        }
+
+        &:first-child {
+          &::before {
+            background-image: linear-gradient(to right, transparent 50%, theme('colors.blue.600') 50%);
+          }
+        }
+
+        &:last-child {
+          &::before {
+            background-image: linear-gradient(to left, transparent 50%, theme('colors.blue.600') 50%);
+          }
+        }
+      }
+    }
+
+    &.eds-step\.current {
+      @apply text-gray-900;
+
+      &::after {
+        @apply bg-magenta-600;
+        box-shadow: 0 0 0 2px inset white;
+        border: 1px solid theme('colors.magenta.600');
+        height: 12px;
+        width: 12px;
+      }
+    }
+
+  }
+
+  .eds-step\.visited + .eds-step\.current {
+    /* Track Styles */
+    &::before {
+      background-image: linear-gradient(to right, theme('colors.gray.800') 50%, theme('colors.gray.300') 50%);
+    }
+
+    &:last-child {
+      &::before {
+        background-image: linear-gradient(to left, transparent 50%, theme('colors.gray.800') 50%);
+      }
+    }
+  }
+
+  .eds-step\.can-return + .eds-step\.current {
+    /* Track Styles */
+    &::before {
+      background-image: linear-gradient(to right, theme('colors.blue.600') 50%, theme('colors.gray.300') 50%);
+    }
+
+    &:last-child {
+      &::before {
+        background-image: linear-gradient(to left, transparent 50%, theme('colors.blue.600') 50%);
+      }
+    }
+  }
+
+  /* Vertical theme */
+  &.eds-step-sequence\.vertical {
+    @apply
+      flex-col
+      items-start
+    ;
+
+    .eds-step {
+      padding-top: 16px;
+      padding-bottom: 16px;
+      padding-left: 24px;
+      text-align: left;
+
+      &::before {
+        background-image: linear-gradient(to bottom, theme('colors.gray.300') 50%, theme('colors.gray.300') 50%);
+        top: 0;
+        height: 100%;
+        left: 6px;
+        width: 2px;
+      }
+
+      &:first-child {
+        &::before {
+          background-image: linear-gradient(to bottom, transparent 50%, theme('colors.gray.300') 50%);
+        }
+      }
+
+      &:last-child {
+        &::before {
+          background-image: linear-gradient(to top, transparent 50%, theme('colors.gray.300') 50%);
+        }
+      }
+
+      &::after {
+        left: 0;
+        top: calc(50% - 7px);
+      }
+
+
+      &.eds-step\.visited {
+
+        /* Track Styles */
+        &::before {
+          background-image: linear-gradient(to bottom, theme('colors.gray.800') 50%, theme('colors.gray.800') 50%);
+        }
+
+        &:first-child {
+          &::before {
+            background-image: linear-gradient(to bottom, transparent 50%, theme('colors.gray.800') 50%);
+          }
+        }
+
+        &:last-child {
+          &::before {
+            background-image: linear-gradient(to top, transparent 50%, theme('colors.gray.800') 50%);
+          }
+        }
+
+        &.eds-step\.can-return {
+
+          /* Track Styles */
+          &::before {
+            background-image: linear-gradient(to bottom, theme('colors.blue.600') 50%, theme('colors.blue.600') 50%);
+          }
+
+          &:first-child {
+            &::before {
+              background-image: linear-gradient(to bottom, transparent 50%, theme('colors.blue.600') 50%);
+            }
+          }
+
+          &:last-child {
+            &::before {
+              background-image: linear-gradient(to top, transparent 50%, theme('colors.blue.600') 50%);
+            }
+          }
+        }
+      }
+    }
+
+    .eds-step\.visited + .eds-step\.current {
+      /* Track Styles */
+      &::before {
+        background-image: linear-gradient(to bottom, theme('colors.gray.800') 50%, theme('colors.gray.300') 50%);
+      }
+
+      &:last-child {
+        &::before {
+          background-image: linear-gradient(to top, transparent 50%, theme('colors.gray.800') 50%);
+        }
+      }
+    }
+
+    .eds-step\.can-return + .eds-step\.current {
+      /* Track Styles */
+      &::before {
+        background-image: linear-gradient(to bottom, theme('colors.blue.600') 50%, theme('colors.gray.300') 50%);
+      }
+
+      &:last-child {
+        &::before {
+          background-image: linear-gradient(to top, transparent 50%, theme('colors.blue.600') 50%);
+        }
+      }
+    }
+  }
+
+}

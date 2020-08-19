@@ -1,0 +1,78 @@
+<% const title = "Table"; %>
+
+<title><%= title %></title>
+
+<section class="example-page">
+
+  <%- include("_header.ejs", {
+    classes: ["example-page_#header"],
+    title,
+    stability: 2,
+    summary: "Fill this in!"
+  }) _%>
+
+  <div class="example-page_#content">
+
+    <table class="eds-table">
+      <thead class="eds-table_#header">
+        <tr class="eds-table_.row eds-table_.row.header">
+          <th class="eds-table_.cell eds-table_.cell.header">
+            <label class="eds-checkbox">
+              <input
+                type="checkbox"
+                class="eds-checkbox_#input"
+                onchange="Array.prototype.forEach.call(this.closest('table').querySelectorAll('tbody input[type=checkbox]'), function(e) { if (e.checked !== this.checked) e.click(); }.bind(this))"
+                />
+            </label>
+          </th>
+          <th class="eds-table_.cell eds-table_.cell.header">H1</th>
+          <th class="eds-table_.cell eds-table_.cell.header">Head 2</th>
+          <th class="eds-table_.cell eds-table_.cell.header">Head 3</th>
+          <th class="eds-table_.cell eds-table_.cell.header">Head 4</th>
+          <th class="eds-table_.cell eds-table_.cell.header">Head 5</th>
+        </tr>
+      </thead>
+      <tbody class="eds-table_#content"><% for (let i = 1; i <= 20; i++) { %>
+        <tr class="eds-table_.row">
+          <td class="eds-table_.cell">
+            <label class="eds-checkbox">
+              <input
+                type="checkbox"
+                class="eds-checkbox_#input"
+                onchange="(function(selectAll, row) { if (row.classList.toggle('eds-table_\.row\.selected') !== selectAll.checked) selectAll.indeterminate = true; })(this.closest('table').querySelector('thead input'), this.closest('tr'))"
+                />
+            </label>
+          </td>
+          <td class="eds-table_.cell"><%- i %></td>
+          <td class="eds-table_.cell">Row <%- i %> data</td>
+          <td class="eds-table_.cell">Row <%- i %> data</td>
+          <td class="eds-table_.cell">Row <%- i %> data</td>
+          <td class="eds-table_.cell">Row <%- i %> data</td>
+        </tr><% } %>
+      </tbody>
+    </table>
+
+    <table class="eds-table eds-table.compact mt-24">
+      <thead class="eds-table_#header">
+        <tr class="eds-table_.row eds-table_.row.header">
+          <th class="eds-table_.cell eds-table_.cell.header">H1</th>
+          <th class="eds-table_.cell eds-table_.cell.header">Head 2</th>
+          <th class="eds-table_.cell eds-table_.cell.header">Head 3</th>
+          <th class="eds-table_.cell eds-table_.cell.header">Head 4</th>
+          <th class="eds-table_.cell eds-table_.cell.header">Head 5</th>
+        </tr>
+      </thead>
+      <tbody class="eds-table_#content"><% for (let i = 1; i <= 20; i++) { %>
+        <tr class="eds-table_.row">
+          <td class="eds-table_.cell"><%- i %></td>
+          <td class="eds-table_.cell">Row <%- i %> data</td>
+          <td class="eds-table_.cell">Row <%- i %> data</td>
+          <td class="eds-table_.cell">Row <%- i %> data</td>
+          <td class="eds-table_.cell">Row <%- i %> data</td>
+        </tr><% } %>
+      </tbody>
+    </table>
+
+  </div>
+
+</section>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html class="h-full">
+  <head>
+    <link rel="stylesheet" href="site-lib/typeface-roboto/index.css" />
+    <link rel="stylesheet" href="site-lib/material-design-icons/iconfont/material-icons.css" />
+    <link rel="stylesheet" href="dist/eds-all.css" />
+    <link rel="stylesheet" href="index.css" />
+    <title>Experian Design System</title>
+  </head>
+  <body>
+    <main class="absolute top-0 left-0 bottom-0 right-0 bg-white">
+      <section id="preview" class="absolute top-0 right-0 left-0 h-1/2 overflow-y-auto p-16">
+        <%- example.body %>
+      </section>
+      <section id="editorArea" class="absolute right-0 bottom-0 left-0 h-1/2 flex flex-col">
+        <div id="editor" class="flex-1"></div>
+      </section>
+    </main>
+    <script src="site-lib/ace-builds/src-min/ace.js"></script>
+    <script src="site-lib/element-closest/browser.js"></script>
+    <script src="site-lib/focus-within/browser.js"></script>
+    <script>focusWithin(document);</script>
+    <script>
+      (function app() {
+        var preview = document.getElementById("preview");
+
+        var editor = ace.edit("editor");
+        var session = editor.getSession();
+
+        editor.setValue(preview.innerHTML.trim());
+
+        session.on("changeAnnotation", function() {
+          var annotations = session.getAnnotations()||[], i = len = annotations.length;
+          while (i--) {
+            if(/doctype first\. Expected/.test(annotations[i].text)) {
+              annotations.splice(i, 1);
+            }
+          }
+          if(len>annotations.length) {
+            session.setAnnotations(annotations);
+          }
+        });
+
+        session.setOptions({
+          mode: "ace/mode/html",
+          useSoftTabs: true,
+          tabSize: 2
+        });
+
+        session.on("change", function() {
+          preview.innerHTML = session.getValue();
+        });
+      })();
+    </script>
+  </body>
+</html>

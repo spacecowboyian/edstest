@@ -1,0 +1,135 @@
+<% const title = "Textbox"; %>
+
+<title><%= title %></title>
+
+<section class="example-page">
+
+  <%- include("_header.ejs", {
+    classes: ["example-page_#header"],
+    title,
+    stability: 2,
+    summary: "Textboxes allow users to enter and edit text."
+  }) _%>
+
+  <div class="example-page_#content">
+
+    <div class="flex mt-32">
+
+      <label class="eds-field w-192">
+        <div class="eds-field_#label">Email Address</div>
+        <div class="eds-field_#control eds-field_.eds-input eds-input">
+          <input type="email" value="jin.ho@experian.com" class="eds-input_#input" />
+        </div>
+        <div class="eds-field_#assistive-text">Use your Experian email.</div>
+      </label>
+
+      <label class="eds-field w-192 ml-8">
+        <div class="eds-field_#label">Email Address</div>
+        <div class="eds-field_#control eds-field_.eds-input eds-input eds-input.warning">
+          <input type="email" value="happydude@gmail.com" class="eds-input_#input" />
+        </div>
+        <div class="eds-field_#assistive-text eds-field_#assistive-text.warning">Use your Experian email.</div>
+      </label>
+
+      <label class="eds-field w-192 ml-8">
+        <div class="eds-field_#label">Email Address</div>
+        <div class="eds-field_#control eds-field_.eds-input eds-input eds-input.error">
+          <input type="email" value="bob@experian" class="eds-input_#input" />
+        </div>
+        <div class="eds-field_#assistive-text eds-field_#assistive-text.error">Invalid email format</div>
+      </label>
+
+    </div>
+
+    <div class="flex mt-32">
+
+      <label class="eds-field w-192">
+        <div class="eds-field_#label eds-field_#label.disabled">Email Address</div>
+        <div class="eds-field_#control eds-field_.eds-input eds-input eds-input.disabled">
+          <input type="email" value="test@abc.com" class="eds-input_#input" disabled />
+        </div>
+      </label>
+
+      <label class="eds-field w-192 ml-8">
+        <div class="eds-field_#label">ZIP Code</div>
+        <div class="eds-field_#control eds-field_.eds-input eds-input">
+          <input type="text" value="ex. 90036-4870" class="eds-input_#input" />
+        </div>
+      </label>
+
+    </div>
+
+    <div class="flex mt-32">
+
+      <label class="eds-field w-192">
+        <div class="eds-field_#label">Email Address</div>
+        <div class="eds-field_#control eds-field_.eds-input eds-input">
+          <div class="eds-input_#prepend eds-input_.eds-input-addon eds-input-addon eds-input-addon.prepend eds-input-addon.gray">
+            <svg class="eds-input-addon_#content eds-input-addon_#content.icon" viewBox="0 0 24 24">
+              <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+            </svg>
+          </div>
+          <input type="email" value="admin@abc.xyz" class="eds-input_#input" />
+        </div>
+      </label>
+
+      <div class="eds-field w-192 ml-8">
+        <label for="passwordExample" class="eds-field_#label">Password</label>
+        <div class="eds-field_#control eds-field_.eds-input eds-input">
+          <input type="password" value="123456" class="eds-input_#input">
+          <div class="eds-input_#append eds-input_.eds-input-addon eds-input-addon eds-input-addon.append">
+            <button
+              class="eds-input-addon_#content eds-input-addon_#content.icon eds-input-addon_.eds-link eds-link"
+              onclick="(function(e) { var visible = e.classList.toggle('pw-visible'); e.parentElement.previousElementSibling.type = visible ? 'text' : 'password'; e.querySelector('.pw-visible').style.display = visible ? 'none' : ''; e.querySelector('.pw-hidden').style.display = visible ? '' : 'none'; })(this)"
+              >
+              <svg fill="currentColor" width="100%" height="100%" viewBox="0 0 24 24">
+                <path class="pw-visible" d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/>
+                <path class="pw-hidden" style="display:none" d="M12 7c2.76 0 5 2.24 5 5 0 .65-.13 1.26-.36 1.83l2.92 2.92c1.51-1.26 2.7-2.89 3.43-4.75-1.73-4.39-6-7.5-11-7.5-1.4 0-2.74.25-3.98.7l2.16 2.16C10.74 7.13 11.35 7 12 7zM2 4.27l2.28 2.28.46.46C3.08 8.3 1.78 10.02 1 12c1.73 4.39 6 7.5 11 7.5 1.55 0 3.03-.3 4.38-.84l.42.42L19.73 22 21 20.73 3.27 3 2 4.27zM7.53 9.8l1.55 1.55c-.05.21-.08.43-.08.65 0 1.66 1.34 3 3 3 .22 0 .44-.03.65-.08l1.55 1.55c-.67.33-1.41.53-2.2.53-2.76 0-5-2.24-5-5 0-.79.2-1.53.53-2.2zm4.31-.78l3.15 3.15.02-.16c0-1.66-1.34-3-3-3l-.17.01z"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <label class="eds-field w-192 ml-8">
+        <div class="eds-field_#label">Income</div>
+        <div class="eds-field_#control eds-field_.eds-input eds-input">
+          <div class="eds-input_#prepend eds-input_.eds-input-addon eds-input-addon eds-input-addon.prepend eds-input-addon.gray">
+            <span class="eds-input-addon_#content eds-input-addon_#content.text">USD</span>
+          </div>
+          <input type="number" value="10000" min="0" max="500000" step="1000" class="eds-input_#input" />
+        </div>
+      </label>
+
+    </div>
+
+    <div class="flex mt-32">
+
+      <div class="eds-field w-192">
+        <div class="eds-field_#label">Emergency Contacts</div>
+        <div class="eds-field_#control eds-field_.eds-control-list eds-control-list">
+          <div class="eds-control-list_.control eds-control-list_.eds-input eds-input mb-8">
+            <input type="email" placeholder="Contact #1" class="eds-input_#input" />
+          </div>
+          <div class="eds-control-list_.control eds-control-list_.eds-input eds-input mb-8">
+            <input type="email" placeholder="Contact #2" class="eds-input_#input" />
+          </div>
+          <div class="eds-control-list_.control eds-control-list_.eds-input eds-input">
+            <input type="email" placeholder="Contact #3" class="eds-input_#input" />
+          </div>
+        </div>
+        <div class="eds-field_#assistive-text">We will contact them in order.</div>
+      </div>
+
+      <div class="eds-field ml-8" style="width: 392px">
+        <div class="eds-field_#label">Remarks</div>
+        <div class="eds-field_#control eds-field_.eds-input eds-input h-128">
+          <textarea class="eds-input_#input"></textarea>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>

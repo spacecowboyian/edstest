@@ -1,0 +1,33 @@
+<% const title = "Token"; %>
+
+<title><%= title %></title>
+
+<section class="example-page">
+
+  <%- include("_header.ejs", {
+    classes: ["example-page_#header"],
+    title,
+    stability: 2,
+    summary: "Use tokens as labeling objects (flags) within your UI. They may be interactive (removable). Tokens may contain text or numerical values."
+  }) _%>
+
+  <div class="example-page_#content">
+
+    <div class="eds-token">
+      <span class="eds-token_#content">Transformers</span>
+    </div>
+
+    <div class="eds-token">
+      <span class="eds-token_#label">Movie:</span>
+      <span class="eds-token_#content">Transformers</span>
+    </div>
+
+    <div class="eds-token">
+      <span class="eds-token_#label">Movie:</span>
+      <span class="eds-token_#content">Transformers</span>
+      <button class="eds-token_#close" onclick="this.closest('.eds-token').style.visibility='hidden';setTimeout(function() { this.closest('.eds-token').style.visibility = ''; }.bind(this), 2000)">&times;</button>
+    </div>
+
+  </div>
+
+</section>

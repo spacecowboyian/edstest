@@ -1,0 +1,48 @@
+@import "../node_modules/tailwindcss/base.css";
+@import "../node_modules/tailwindcss/components.css";
+
+/* Components */
+@import "./eds-alert.css";
+@import "./eds-avatar.css";
+@import "./eds-badge.css";
+@import "./eds-breadcrumbs.css";
+@import "./eds-button.css";
+@import "./eds-card.css";
+@import "./eds-checkbox.css";
+@import "./eds-control-list.css";
+@import "./eds-details.css";
+@import "./eds-field.css";
+@import "./eds-heading.css";
+@import "./eds-input.css";
+@import "./eds-input-addon.css";
+@import "./eds-link.css";
+@import "./eds-menu-header.css";
+@import "./eds-menu-item.css";
+@import "./eds-modal.css";
+@import "./eds-pagination.css";
+@import "./eds-popover.css";
+@import "./eds-primary-header.css";
+@import "./eds-primary-nav-item.css";
+@import "./eds-progress.css";
+@import "./eds-radio.css";
+@import "./eds-segmented-control.css";
+@import "./eds-sidebar.css";
+@import "./eds-step-sequence.css";
+@import "./eds-switch.css";
+@import "./eds-sidebar-toggle.css";
+@import "./eds-table.css";
+@import "./eds-table-wrap.css";
+@import "./eds-tab.css";
+@import "./eds-tabset.css";
+@import "./eds-tag.css";
+@import "./eds-token.css";
+@import "./eds-toolbar.css";
+@import "./eds-tooltip.css";
+
+/* Mixes */
+@import "./eds-accordion_.eds-details.css";
+@import "./eds-primary-nav-item.eds-link.css";
+@import "./eds-sidebar_.eds-menu-item.css";
+@import "./eds-sidebar_.eds-sidebar-toggle.css";
+@import "./eds-tab_.eds-link.css";
+@import "./eds-table-wrap_.eds-table.css";

@@ -1,0 +1,69 @@
+.eds-table {
+  @apply
+    border
+    border-solid
+    border-gray-300
+    rounded-lg
+    bg-white
+    text-black
+    overflow-hidden
+  ;
+
+  border-spacing: 0;
+
+  &_\.row {
+    &:nth-child(2n) {
+      @apply bg-gray-100;
+    }
+
+    &:hover {
+      @apply bg-blue-100;
+    }
+
+    &\.selected {
+      &, &:hover, &:nth-child(2n) {
+        @apply bg-purple-100;
+      }
+    }
+  }
+
+  &_\.cell {
+    @apply
+      antialiased
+      font-400
+      font-sans
+      text-14
+
+      p-8
+      border-box
+      text-left
+
+      border-t-0
+      border-r
+      border-b-0
+      border-l-0
+      border-solid
+      border-gray-300
+    ;
+
+    &:last-child {
+      @apply border-r-0;
+    }
+
+    &\.header {
+      @apply
+        bg-gray-100
+        font-500
+        border-b
+      ;
+    }
+
+    ^&\.compact & {
+      @apply py-4;
+    }
+  }
+
+  &_\#header {
+    -ms-overflow-style: none;
+  }
+}

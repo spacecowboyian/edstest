@@ -1,0 +1,197 @@
+.eds-menu-item {
+  @apply
+    pl-20
+    pr-12
+    py-12
+
+    flex
+    flex-row
+    items-center
+
+    outline-none
+    no-underline
+
+    antialiased
+    font-500
+    font-sans
+    text-14
+  ;
+
+  &\.basic, &\.gray {
+    @apply text-blue-600;
+
+    &:focus {
+      @apply shadow-inside-outline-blue-600;
+    }
+
+    &:hover {
+      @apply text-blue-700;
+    }
+
+    ^&_\#label::after {
+      background-image: svg-load("./eds-menu-item.assets/marker.svg", fill: ref(^^&\.basic, color));
+    }
+
+    &:hover {
+      @apply text-blue-700;
+
+      ^^&_\#label::after {
+        background-image: svg-load("./eds-menu-item.assets/marker.svg", fill: ref(^^^&\.basic:hover, color));
+      }
+    }
+
+    &-selected {
+      @apply text-magenta-600;
+
+      ^^&_\#icon, ^^&_\#label {
+        @apply text-black;
+      }
+
+      ^^&_\#label::after {
+        background-image: svg-load("./eds-menu-item.assets/marker.svg", fill: ref(^^^&\.basic-selected ^^^&_\#label, color));
+      }
+    }
+  }
+
+  &\.basic {
+    @apply bg-white;
+
+    &:hover, &-selected {
+      @apply bg-gray-100;
+    }
+  }
+
+  &\.gray {
+    @apply bg-gray-100;
+
+    &:hover, &-selected {
+      @apply bg-white;
+    }
+  }
+
+  &\.blue, &\.raspberry {
+    &, &\-selected {
+      &, &:hover {
+        @apply text-white;
+      }
+    }
+
+    &:focus {
+      @apply shadow-inside-outline-white;
+    }
+
+    ^&_\#label::after {
+      background-image: svg-load("./eds-menu-item.assets/marker.svg", fill: ref(^^&\.blue, color));
+    }
+  }
+
+  &\.blue {
+    @apply bg-blue-900;
+
+    &:hover {
+      @apply bg-blue-800;
+    }
+
+    &\-selected {
+      @apply bg-blue-700;
+    }
+  }
+
+  &\.raspberry {
+    @apply bg-raspberry-600;
+
+    &:hover {
+      @apply bg-raspberry-700;
+    }
+
+    &\-selected {
+      @apply bg-raspberry-800;
+    }
+  }
+
+  &\.indent {
+    @apply pl-36;
+  }
+
+  &\.indent2 {
+    @apply pl-52;
+  }
+
+  &\.closed, &\.open {
+    ^&_\#label::after {
+     @apply
+        absolute
+        bg-center
+        bg-no-repeat
+        bottom-0
+        top-0
+        transition-150
+        transition-ease
+        transition-transform
+        w-12
+      ;
+      right: -24px;
+      content: "";
+    }
+  }
+
+  &\.closed &_\#label::after {
+    transform: rotate(90deg);
+  }
+
+  &\.open &_\#label::after {
+    transform: rotate(-90deg);
+  }
+
+  &\.hidden {
+    &, ^&_\#icon, ^&_\#label {
+      @apply content-0;
+    }
+  }
+
+  &, &_\#icon, &_\#label {
+    @apply
+      transition-150
+      transition-content
+      transition-ease
+    ;
+  }
+
+  &_\#icon {
+    /* Material Design claims that its button is compatible with MD Icons, Font Awesome, SVG, and ???.
+     * Therefore, we apply the same styles here as its mdc-button__icon class.
+     * See also: https://material.io/develop/web/components/buttons/
+     */
+    $size: 24px;
+    width: $size;
+    height: $size;
+    font-size: $size;
+    fill: currentColor;
+  }
+
+  &_\#label {
+    @apply relative;
+
+    ^&\.gray-selected &::before, ^&\.basic-selected &::before {
+      content: "";
+      top: calc(50% - 12px);
+      bottom: calc(50% + 12px);
+      left: -10px;
+
+      @apply
+        absolute
+        w-4
+        h-24
+        bg-magenta-600
+      ;
+    }
+  }
+
+  &_\#icon ~ &_\#label {
+    @apply ml-8;
+
+    &::before {
+      left: -42px;
+    }
+  }
+}

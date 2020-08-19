@@ -1,0 +1,21 @@
+@import "@experian/eds-styles/dist/components/eds-segmented-control";
+
+:host {
+
+  /* Fixes a quirk in Chrome: */
+  max-height:24px;
+
+}
+
+::slotted(:not(svg)) {
+  @extend .eds-segmented-control_\.option_\#label;
+}
+
+::slotted(svg) {
+  @extend .eds-segmented-control_\.option_\#icon;
+  vertical-align: middle; /* Fixes a quirk in Safari. */
+}
+
+::slotted(:not(:first-child)) {
+  margin-left:12px;
+}

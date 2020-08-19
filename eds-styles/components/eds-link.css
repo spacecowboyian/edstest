@@ -1,0 +1,27 @@
+.eds-link {
+  @apply
+    bg-transparent
+    border-0
+    cursor-pointer
+    p-0
+    text-blue-600
+  ;
+
+  &:hover {
+    @apply text-blue-700;
+  }
+
+  &:active {
+    @apply text-blue-800;
+  }
+
+  &:disabled {
+    @apply text-gray-600;
+  }
+
+  &\.selected {
+    &, &:hover {
+      @apply text-black;
+    }
+  }
+}

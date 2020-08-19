@@ -1,0 +1,46 @@
+{
+  "name": "@experian/eds-styles",
+  "version": "3.2.1-4",
+  "description": "Experian Design System CSS layer",
+  "license": "UNLICENSED",
+  "repository": {
+    "type": "git",
+    "url": "https://bitbucketglobal.experian.local/scm/eds/eds-styles.git"
+  },
+  "scripts": {
+    "build": "node build.js",
+    "lint": "eslint .eslintrc.js build.js tailwind.config.js --ignore-pattern !.eslintrc.js",
+    "prepublishOnly": "node build.js --production"
+  },
+  "devDependencies": {
+    "@experian/eslint-config-eds": "^1.0.3",
+    "ace-builds": "^1.4.5",
+    "autoprefixer": "^9.6.0",
+    "copy": "^0.3.2",
+    "cssnano": "^4.1.10",
+    "ejs": "^2.6.2",
+    "element-closest": "^3.0.1",
+    "eslint": "^6.0.0",
+    "focus-within": "^3.0.2",
+    "fs-extra": "^8.1.0",
+    "material-design-icons": "^3.0.1",
+    "popper.js": "^1.15.0",
+    "postcss-calc": "^7.0.1",
+    "postcss-cli": "^6.1.2",
+    "postcss-import": "^12.0.1",
+    "postcss-inline-svg": "^4.1.0",
+    "postcss-nested": "^4.1.2",
+    "postcss-nested-ancestors": "^2.0.0",
+    "postcss-scopify": "^0.1.9",
+    "postcss-simple-vars": "^5.0.2",
+    "tailwindcss": "^1.0.4",
+    "tailwindcss-export-config": "^2.0.2",
+    "tailwindcss-transitions": "^2.0.1",
+    "typeface-roboto": "^0.0.54",
+    "watch": "^1.0.2"
+  },
+  "peerDependencies": {
+    "focus-within": "^3.0.2",
+    "typeface-roboto": "^0.0.54"
+  }
+}

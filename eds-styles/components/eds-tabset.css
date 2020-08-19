@@ -1,0 +1,13 @@
+.eds-tabset {
+  @apply
+    list-none
+    p-0
+    flex
+    border-t-0
+    border-r-0
+    border-b
+    border-l-0
+    border-solid
+    border-gray-300
+  ;
+}

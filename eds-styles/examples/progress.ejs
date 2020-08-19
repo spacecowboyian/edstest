@@ -1,0 +1,34 @@
+<% const title = "Progress"; %>
+
+<title><%= title %></title>
+
+<section class="example-page">
+
+  <%- include("_header.ejs", {
+    classes: ["example-page_#header"],
+    title,
+    stability: 2,
+    summary: "Progess is a visual indicator of a background process that displays some portion of the UI when completed."
+  }) _%>
+
+  <div class="example-page_#content">
+    <% ["purple", "magenta"].forEach((motif, i) => { %>
+    <div<%- i ? ` class="mt-16"` : "" %>>
+      <div class="eds-progress eds-progress.<%- motif %> w-192">
+        <progress class="eds-progress_.progress eds-progress_#primary" value="50" max="75"></progress>
+      </div>
+
+      <div class="eds-progress eds-progress.<%- motif %> w-192">
+        <progress class="eds-progress_.progress eds-progress_#primary" value="50" max="75" aria-label="Value"></progress>
+        <progress class="eds-progress_.progress eds-progress_#baseline" value="60" max="75" aria-label="Baseline value"></progress>
+      </div>
+
+      <div class="eds-progress eds-progress.<%- motif %> w-192">
+        <progress class="eds-progress_.progress eds-progress_#primary"></progress>
+      </div>
+    </div>
+    <% }) %>
+
+  </div>
+
+</section>

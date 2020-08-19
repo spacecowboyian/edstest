@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+
+<link rel="stylesheet" href="../node_modules/typeface-roboto/index.css" />
+<link rel="stylesheet" href="../dist/components/eds-details.css" />
+<style>
+body.no-details .no-details-hide {
+  display: none;
+}
+
+body:not(.no-details) .no-details-show {
+  display: none;
+}
+</style>
+
+<div class="no-details-hide">
+  <h2><code>details</code> Element</h2>
+
+  <details class="eds-details">
+    <summary class="eds-details_#summary">What is Lorem Ipsum?</summary>
+    <div class="eds-details_#container">
+      <div class="eds-details_#content">
+        <div>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</div>
+        <div>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</div>
+        <div>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</div>
+      </div>
+    </div>
+  </details>
+</div>
+
+<h2><code>div</code> element</h2>
+
+<div class="eds-details">
+  <button class="eds-details_#summary">What is Lorem Ipsum?</button>
+  <div class="eds-details_#container">
+    <div class="eds-details_#content">
+      <div>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</div>
+      <div>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</div>
+      <div>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</div>
+    </div>
+  </div>
+</div>
+
+<script>
+function EDSDetails(details) {
+  var summary = details.querySelector(".eds-details_\\#summary"),
+      container = details.querySelector(".eds-details_\\#container"),
+      content = details.querySelector(".eds-details_\\#content");
+
+  var open = null;
+
+  var toggle =
+    "open" in details
+    ? [details, "toggle", function() { return details.open; }]
+    : [summary, "click", function() { return (open = !open); }]
+ 
+  toggle[0].addEventListener(toggle[1], function() {
+    if (toggle[2]()) {
+      details.classList.add("eds-details.open");
+      expand(container, content);
+    }
+    else {
+      details.classList.remove("eds-details.open");
+      collapse(container);
+    }
+
+    function expand(container, content) {
+      var period = window.TRANSITION_PERIOD || 150;
+
+      var contentH = h(content);
+
+      function loop(currentTime, startTime) {
+        var elapsedTime = startTime ? (currentTime - startTime) : 0;
+        var newH = Math.ceil(contentH * (elapsedTime / period));
+        h(container, newH);
+        if (newH < contentH) {
+          requestAnimationFrame(function(t) {
+            loop(t, startTime || currentTime);
+          });
+        }
+      }
+
+      requestAnimationFrame(loop);
+    }
+
+    function collapse(container) {
+      h(container, 0);
+    }
+
+    function h(el, h) {
+      if (arguments.length > 1) {
+        el.style.height = h + "px";
+      }
+      return el.offsetHeight;
+    }
+  });
+
+  details.classList.add("eds-details.enhanced");
+}
+
+if (!("open" in document.createElement("details"))) {
+  document.body.classList.add("no-details");
+}
+
+(function() {
+  var detailss = document.querySelectorAll(".eds-details");
+  for (var i = 0; i < detailss.length; i++) {
+    EDSDetails(detailss[i]);
+  }
+})();
+</script>

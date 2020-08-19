@@ -1,0 +1,61 @@
+.example-page {
+  @apply
+    bg-white
+    m-16
+    border
+    border-solid
+    border-gray-400
+    rounded-lg
+  ;
+}
+
+.example-page_\#content {
+  @apply
+    m-16
+    mt-0
+    pt-16
+    border-t
+    border-r-0
+    border-b-0
+    border-l-0
+    border-solid
+    border-gray-300
+  ;
+}
+
+.example-header {
+  @apply
+    flex
+    flex-row
+    flex-wrap
+    items-center
+    
+    p-8
+
+    text-black
+    antialiased
+    font-400
+    font-sans
+    text-16
+  ;
+}
+
+.example-header_\#title {
+  @apply
+    m-0
+    inline-block
+
+    antialiased
+    font-300
+    font-sans
+    text-30
+  ;
+}
+
+.example-header_\#summary {
+  @apply w-full;
+}
+
+.example-header_\#title, .example-header_\#summary, .example-header_\#status {
+  @apply p-8;
+}

@@ -1,0 +1,67 @@
+<% const title = "Alert"; %>
+
+<title><%= title %></title>
+
+<section class="example-page">
+
+  <%- include("_header.ejs", {
+    classes: ["example-page_#header"],
+    title,
+    stability: 2,
+    summary: "Alerts are used to provide the user with in-app notification messages."
+  }) _%>
+
+  <div class="example-page_#content">
+  <%_
+  ["info", "success", "warning", "error"].forEach((motif, motifKey, motifs) => {
+    const title = motif[0].toUpperCase() + motif.substring(1);
+    const message = (function(m) {
+      switch (m) {
+        case "info":
+          return "This is a message that provides the user with information.";
+        case "success":
+          return "This is a message that lets the user know an action was successfully completed.";
+        case "warning":
+          return "This is a message that provides the user with a warning.";
+        case "error":
+          return "This is a message that lets the user know something went wrong and offers a way to resolve the issue whenever possible.";
+        default:
+          return "???";
+      }
+    })(motif);
+
+    ["", " eds-alert.border", " eds-alert.gray", " eds-alert.border eds-alert.shadow"].forEach((variant, variantKey, variants) => {
+    %>
+    <div class="eds-alert eds-alert.<%= motif %><%= variant %>" role="alert">
+      <button class="eds-alert_#close eds-alert_.eds-link eds-link" aria-label="close">
+        <svg width="100%" height="100%" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+        </svg>
+      </button>
+      <div class="eds-alert_#content">
+        <h1 class="eds-alert_#title"><%= title %></h1>
+        <p class="eds-alert_#message"><%= message %></p>
+      </div>
+    </div>
+
+    <p></p>
+
+    <div class="eds-alert eds-alert.<%= motif %><%= variant %>" role="alert">
+      <button class="eds-alert_#close eds-alert_.eds-link eds-link" aria-label="close">
+        <svg width="100%" height="100%" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+        </svg>
+      </button>
+      <div class="eds-alert_#content">
+        <span class="eds-alert_#title"><%= title %></span>:
+        <span class="eds-alert_#message"><%= message %></span>
+      </div>
+    </div>
+    <% if (variantKey !== variants.length || motifKey !== motifs.length - 1) { %>
+    <p></p>
+    <% }
+    })
+  }) %>
+  </div>
+
+</section>

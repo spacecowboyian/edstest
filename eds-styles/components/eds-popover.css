@@ -1,0 +1,173 @@
+.eds-popover {
+  $marker-width: 9px;
+  $marker-length: 15px;
+
+  @apply
+    antialiased
+    bg-white
+    border
+    border-solid
+    border-gray-300
+    font-400
+    font-sans
+    inline-block
+    m-16
+    p-16
+    relative
+    rounded
+    shadow-sm
+    text-16
+    text-black
+  ;
+
+  &_\#marker {
+    @apply absolute;
+  }
+
+  &\.top, &\.bottom {
+    &, &-start, &-end {
+      @apply
+        mr-0
+        ml-0
+      ;
+
+      ^^&_\#marker {
+        width: $marker-length;
+        height: $marker-width;
+      }
+    }
+
+    ^&_\#marker {
+      left: calc(50% - $marker-length / 2); /* default for unmanaged marker position */
+    }
+
+    &-start {
+      ^^&_\#marker {
+        left: ref(^^^&, border-radius); /* default for unmanaged marker position */
+      }
+    }
+
+    &-end {
+      ^^&_\#marker {
+        right: ref(^^^&, border-radius); /* default for unmanaged marker position */
+      }
+    }
+  }
+
+  &\.top {
+    @svg-load marker url(eds-popover.assets/marker-top.svg) {
+      fill: ref(^&, background-color);
+      *:first-child {
+        fill: ref(^^&, border-color);
+      }
+    }
+
+    &, &-start, &-end {
+      @apply mt-0;
+
+      ^^&_\#marker {
+        bottom: calc(0px - $marker-width);
+        background-image: svg-inline(marker);
+      }
+    }
+  }
+
+  &\.bottom {
+    @svg-load marker url(eds-popover.assets/marker-bottom.svg) {
+      fill: ref(^&, background-color);
+      *:first-child {
+        fill: ref(^^&, border-color);
+      }
+    }
+
+    &, &-start, &-end {
+      @apply mb-0;
+
+      ^^&_\#marker {
+        top: calc(0px - $marker-width);
+        background-image: svg-inline(marker);
+      }
+    }
+  }
+
+  &\.right, &\.left {
+    &, &-start, &-end {
+      @apply
+        mt-0
+        mb-0
+      ;
+
+      ^^&_\#marker {
+        width: $marker-width;
+        height: $marker-length;
+      }
+    }
+
+    ^&_\#marker {
+      top: calc(50% - $marker-length / 2); /* default for unmanaged marker position */
+    }
+
+    &-start {
+      ^^&_\#marker {
+        top: ref(^^^&, border-radius); /* default for unmanaged marker position */
+      }
+    }
+
+    &-end {
+      ^^&_\#marker {
+        bottom: ref(^^^&, border-radius); /* default for unmanaged marker position */
+      }
+    }
+  }
+
+  &\.right {
+    @svg-load marker url(eds-popover.assets/marker-right.svg) {
+      fill: ref(^&, background-color);
+      *:first-child {
+        fill: ref(^^&, border-color);
+      }
+    }
+
+    &, &-start, &-end {
+      @apply mr-0;
+
+      ^^&_\#marker {
+        left: calc(0px - $marker-width);
+        background-image: svg-inline(marker);
+      }
+    }
+  }
+
+  &\.left {
+    @svg-load marker url(eds-popover.assets/marker-left.svg) {
+      fill: ref(^&, background-color);
+      *:first-child {
+        fill: ref(^^&, border-color);
+      }
+    }
+
+    &, &-start, &-end {
+      @apply ml-0;
+
+      ^^&_\#marker {
+        right: calc(0px - $marker-width);
+        background-image: svg-inline(marker);
+      }
+    }
+  }
+
+  &\.reduced-padding {
+    @apply p-8;
+  }
+
+  &\.no-padding {
+    @apply
+      px-0
+      py-4
+    ;
+  }
+
+  &\.no-margin {
+    @apply m-0;
+  }
+}

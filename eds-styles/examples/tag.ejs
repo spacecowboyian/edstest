@@ -1,0 +1,28 @@
+<% const title = "Tag"; %>
+
+<title><%= title %></title>
+
+<section class="example-page">
+
+  <%- include("_header.ejs", {
+    classes: ["example-page_#header"],
+    title,
+    stability: 2,
+    summary: "Use tags to display metadata, status, or additional information. They may use color to help indicate meaning to your user."
+  }) _%>
+
+  <div class="example-page_#content">
+
+    <div class="eds-tag">Default</div>
+
+    <div class="eds-tag eds-tag.info">Info</div>
+
+    <div class="eds-tag eds-tag.error ml-4">Error</div>
+
+    <div class="eds-tag eds-tag.warning ml-4">Warning</div>
+
+    <div class="eds-tag eds-tag.success ml-4">Success</div>
+
+  </div>
+
+</section>

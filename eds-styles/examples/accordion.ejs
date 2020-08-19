@@ -1,0 +1,69 @@
+<% const title = "Accordion"; %>
+
+<title><%= title %></title>
+
+<section class="example-page">
+
+  <%- include("_header.ejs", {
+    classes: ["example-page_#header"],
+    title,
+    stability: 2,
+    summary: "An accordion is a vertically stacked menu with a list of headers that can be clicked to reveal or hide content related to the header."
+  }) _%>
+
+  <div class="example-page_#content">
+
+    <div class="eds-accordion">
+<% [1,2,3].forEach((n, i) => { %>
+      <div class="eds-accordion_.eds-details eds-details <%- i === 1 ? " eds-details.open" : "" %>">
+        <button
+          id="summary<%-n%>"
+          aria-expanded="<%- i === 1 ? "true" : "false" %>"
+          aria-controls="container<%-n%>"
+          aria-disabled="false"
+          class="eds-details_#summary"
+          onclick="this.setAttribute('aria-expanded', this.parentElement.classList.toggle('eds-details.open').toString())">
+          Item <%-n%>
+        </button>
+        <div
+          id="container<%-n%>"
+          role="region"
+          aria-labelledby="summary<%-n%>"
+          class="eds-details_#container">
+          <div class="eds-details_#content">
+            Item <%-n%> content
+            <% if (n === 3) { %>
+              <div class="eds-accordion mt-16">
+              <% [1,2,3].forEach((n, i) => { %>
+                <div class="eds-accordion_.eds-details eds-details <%- i === 1 ? " eds-details.open" : "" %>">
+                  <button
+                    id="summary<%-n%>"
+                    aria-expanded="<%- i === 1 ? "true" : "false" %>"
+                    aria-controls="container<%-n%>"
+                    aria-disabled="false"
+                    class="eds-details_#summary"
+                    onclick="this.setAttribute('aria-expanded', this.parentElement.classList.toggle('eds-details.open').toString())">
+                    Nested item <%-n%>
+                  </button>
+                  <div
+                    id="container<%-n%>"
+                    role="region"
+                    aria-labelledby="summary<%-n%>"
+                    class="eds-details_#container">
+                    <div class="eds-details_#content">
+                      Nested item <%-n%> content
+                    </div>
+                  </div>
+                </div>
+              <% }) %>
+              </div>
+            <% } %>
+          </div>
+        </div>
+      </div>
+<% }) %>
+    </div>
+
+  </div>
+
+</section>

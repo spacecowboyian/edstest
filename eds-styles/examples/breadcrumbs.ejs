@@ -1,0 +1,48 @@
+<% const title = "Breadcrumbs"; %>
+
+<title><%= title %></title>
+
+<section class="example-page">
+
+  <%- include("_header.ejs", {
+    classes: ["example-page_#header"],
+    title,
+    stability: 2,
+    summary: "Breadcrumbs are navigational components that show the user their location within the application."
+  }) _%>
+
+  <div class="example-page_#content">
+    
+    <div class="bg-gray-100">
+      <nav class="eds-breadcrumbs" aria-label="Breadcrumbs">
+        <a
+          href="#breadcrumbs.html" class="eds-breadcrumbs_.part eds-link"
+          aria-label="home">
+          <svg class="eds-breadcrumbs_.icon" viewBox="0 0 24 24">
+            <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+          </svg>
+        </a>
+        <span class="eds-breadcrumbs_.part" aria-hidden="true">/</span>
+        <a href="#breadcrumbs.html" class="eds-breadcrumbs_.part eds-link">Settings</a>
+        <span class="eds-breadcrumbs_.part" aria-hidden="true">/</span>
+        <a href="#breadcrumbs.html" class="eds-breadcrumbs_.part eds-link eds-link.selected">Change Password</a>
+      </nav>
+    </div>
+
+    <nav class="eds-breadcrumbs" aria-label="Breadcrumbs">
+      <a
+        href="#breadcrumbs.html" class="eds-breadcrumbs_.part eds-link"
+        aria-label="home">
+        <svg class="eds-breadcrumbs_.icon" viewBox="0 0 24 24">
+          <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+        </svg>
+      </a>
+      <span class="eds-breadcrumbs_.part" aria-hidden="true">/</span>
+      <a href="#breadcrumbs.html" class="eds-breadcrumbs_.part eds-link">Settings</a>
+      <span class="eds-breadcrumbs_.part" aria-hidden="true">/</span>
+      <a href="#breadcrumbs.html" class="eds-breadcrumbs_.part eds-link eds-link.selected">Change Password</a>
+    </nav>
+
+  </div>
+
+</section>

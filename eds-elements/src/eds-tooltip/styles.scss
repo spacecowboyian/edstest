@@ -1,0 +1,22 @@
+@import "@experian/eds-styles/dist/eds-primitives.scss";
+
+:host {
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
+}
+
+#container {
+  transition-property: $transitionProperty-opacity;
+  transition-duration: $transitionDuration-150;
+  transition-timing-function: $transitionTimingFunction-ease;
+  opacity: 0;
+  display: inline-block;
+  &.show {
+    opacity: 1;
+  }
+}
+
+.eds-tooltip_\#content {
+  white-space: nowrap;
+}

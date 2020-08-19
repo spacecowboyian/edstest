@@ -1,0 +1,49 @@
+@import "~@experian/eds-styles/dist/eds-primitives";
+@import "~@experian/eds-styles/dist/components/eds-breadcrumbs";
+@import "~@experian/eds-styles/dist/components/eds-link";
+
+.white {
+  background: $colors-white;
+}
+
+.gray {
+  background: $colors-gray-100;
+}
+
+::slotted(*) {
+  @extend .eds-breadcrumbs_\.part;
+}
+
+::slotted(a) {
+  @extend .eds-link;
+  text-decoration: none;
+}
+
+::slotted(a)::before {
+  @extend .eds-breadcrumbs_\.part;
+  margin-left: 0;
+  margin-right: $spacing-12;
+  cursor: default;
+  color: $colors-gray-600;
+  font-size: $fontSize-14;
+}
+
+::slotted(a:first-child)::before {
+  display: none;
+}
+
+::slotted(a:hover) {
+  @extend .eds-link:hover;
+}
+
+::slotted(a:active) {
+  @extend .eds-link:active;
+}
+
+::slotted(a:last-of-type) {
+  @extend .eds-link\.selected;
+}
+
+::slotted([slot="icon"]) {
+  @extend .eds-breadcrumbs_\.icon;
+}

@@ -1,0 +1,35 @@
+// https://eslint.org/docs/user-guide/configuring
+{
+  "extends": "eslint:recommended",
+  "root": true,
+  "rules": {
+    "semi": [
+      "error",
+      "always"
+    ],
+    "eqeqeq": "warn",
+    "indent": ["error", 2],
+    "no-return-assign": "warn",
+    "no-useless-escape": "off",
+    "space-before-function-paren": "off"
+  },
+  "parserOptions": {
+    "sourceType": "module"
+  },
+  "env": {
+    "es6": true,
+    "browser": true,
+    "node": true
+  },
+  "globals": {
+    "agGrid": false,
+    "customElements": false,
+    "CustomEvent": false,
+    "EDSElement": false,
+    "LitElement": false,
+    "Element": false,
+    "HTMLElement": false,
+    "Node": false,
+    "Popper": false
+  }
+}

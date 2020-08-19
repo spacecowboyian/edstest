@@ -1,0 +1,128 @@
+.eds-sidebar {
+  @apply
+
+    h-full
+    border-box
+
+    flex
+    flex-col
+
+    transition-150
+    transition-ease
+    transition-w
+
+  ;
+
+  &_\#content, &_\#controls {
+    @apply overflow-x-hidden;
+  }
+
+  &_\#content {
+    @apply
+      flex-1
+      overflow-y-auto
+    ;
+  }
+
+  &\.closed {
+    @apply w-48;
+  }
+
+  &\.open {
+    @apply w-256;
+  }
+
+  &_\#controls {
+    @apply
+      border-t
+      border-r-0
+      border-b-0
+      border-l-0
+      border-solid
+      border-transparent
+    ;
+  }
+
+  &_\.section {
+    @apply py-12;
+
+    &:not(:first-child) {
+      @apply relative;
+
+      &::after {
+        content: "";
+        @apply
+          absolute
+          top-0
+          right-0
+          left-0
+          h-1
+          mx-12
+          bg-transparent
+        ;
+      }
+    }
+  }
+
+  &_\.when-closed, &_\.when-open {
+    @apply
+      transition-150
+      transition-content
+      transition-ease
+    ;
+  }
+
+  &\.open &_\.when-closed, &\.closed &_\.when-open {
+    @apply content-0;
+  }
+
+  &\.basic {
+    @apply
+      bg-white
+      border-t-0
+      border-r
+      border-b-0
+      border-l-0
+      border-solid
+      border-gray-300
+    ;
+  }
+
+  &\.basic, &\.gray {
+    ^&_\.section:not(:first-child)::after {
+      @apply bg-gray-300;
+    }
+
+    ^&_\#controls {
+      @apply border-gray-300;
+    }
+  }
+
+  &\.blue {
+    @apply bg-blue-900;
+
+    ^&_\.section:not(:first-child)::after {
+      @apply bg-blue-700;
+    }
+
+    ^&_\#controls {
+      @apply border-blue-700;
+    }
+  }
+
+  &\.raspberry {
+    @apply bg-raspberry-600;
+
+    ^&_\.section:not(:first-child)::after {
+      @apply bg-raspberry-800;
+    }
+
+    ^&_\#controls {
+      @apply border-raspberry-800;
+    }
+  }
+
+  &\.gray {
+    @apply bg-gray-100;
+  }
+}

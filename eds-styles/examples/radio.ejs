@@ -1,0 +1,51 @@
+<% const title = "Radio"; %>
+
+<title><%= title %></title>
+
+<section class="example-page">
+
+  <%- include("_header.ejs", {
+    classes: ["example-page_#header"],
+    title,
+    stability: 1,
+    summary: "Radio buttons allow the user to select a single item from a set of options."
+  }) _%>
+
+  <div class="example-page_#content">
+
+    <div class="flex flex-row items-center">
+      <label class="eds-radio mr-16">
+        <input type="radio" name="foo" class="eds-radio_#input" checked />
+        <span class="eds-radio_#label">Label 1</span>
+      </label>
+      <label class="eds-radio mr-16">
+        <input type="radio" name="foo" class="eds-radio_#input" />
+        <span class="eds-radio_#label">Label 2</span>
+      </label>
+      <label class="eds-radio">
+        <input type="radio" name="foo" class="eds-radio_#input" disabled />
+        <span class="eds-radio_#label">Label 3</span>
+      </label>
+    </div>
+
+    <div class="eds-field mt-32">
+      <div class="eds-field_#label">Communication Preference</div>
+      <div class="eds-field_#control eds-field_.eds-control-list eds-control-list">
+        <label class="eds-control-list_.control eds-control-list_.eds-radio eds-radio">
+          <input type="radio" name="commpref" class="eds-radio_#input" checked />
+          <span class="eds-radio_#label">SMS</span>
+        </label>
+        <label class="eds-control-list_.control eds-control-list_.eds-radio eds-radio">
+          <input type="radio" name="commpref" class="eds-radio_#input" />
+          <span class="eds-radio_#label">Email</span>
+        </label>
+        <label class="eds-control-list_.control eds-control-list_.eds-radio eds-radio">
+          <input type="radio" name="commpref" class="eds-radio_#input" />
+          <span class="eds-radio_#label">Phone</span>
+        </label>
+      </div>
+    </div>
+
+  </div>
+
+</section>
